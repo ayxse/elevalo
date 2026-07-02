@@ -473,15 +473,19 @@ function HeroProductPreview() {
           </div>
 
           <div className="handoff-board">
+            <div className="process-floaters" aria-hidden="true">
+              <span>Servicios</span>
+              <span>Estilo</span>
+              <span>Contacto</span>
+              <span>Responsive</span>
+              <span>Formulario</span>
+              <span>Fotos</span>
+            </div>
+
             <article className="handoff-card request-card">
               <span className="handoff-label">1. Solicitud</span>
               <h3>Detalles del negocio</h3>
               <p>Nombre, servicios, estilo, pueblo, fotos y objetivo principal.</p>
-              <div className="brief-list" aria-hidden="true">
-                <span>Servicios</span>
-                <span>Estilo</span>
-                <span>Contacto</span>
-              </div>
             </article>
 
             <article className="handoff-card preview-card">
@@ -504,10 +508,6 @@ function HeroProductPreview() {
               <h3>Pagas solo si te gusta</h3>
               <div className="approval-price">$100</div>
               <p>Recibes la página para usarla, publicarla o conectarla.</p>
-              <div className="approval-checks" aria-hidden="true">
-                <span>Responsive</span>
-                <span>Formulario</span>
-              </div>
             </article>
           </div>
         </div>
