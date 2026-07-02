@@ -377,27 +377,26 @@ p {
 }
 
 .hero-product::before {
-  animation: hero-ambient-shift 18s ease-in-out infinite alternate;
   background: linear-gradient(
     92deg,
     rgba(20, 99, 255, 0) 0%,
-    rgba(20, 99, 255, 0.3) 18%,
-    rgba(9, 205, 255, 0.36) 48%,
-    rgba(111, 95, 255, 0.18) 74%,
+    rgba(20, 99, 255, 0.14) 26%,
+    rgba(9, 205, 255, 0.24) 50%,
+    rgba(111, 95, 255, 0.1) 74%,
     rgba(20, 99, 255, 0) 100%
   );
   background-size: 170% 100%;
-  bottom: 8px;
+  border-radius: 999px;
+  bottom: 12px;
   content: "";
-  filter: blur(36px);
-  height: 210px;
+  filter: blur(30px);
+  height: 152px;
   left: 50%;
-  opacity: 0.68;
+  opacity: 0.48;
   pointer-events: none;
   position: absolute;
   transform: translateX(-50%);
-  width: min(1080px, 96vw);
-  will-change: background-position, opacity, transform;
+  width: min(680px, 62vw);
   z-index: 0;
 }
 
@@ -444,24 +443,21 @@ p {
 }
 
 .handoff-board::before {
-  animation: board-ambient-drift 22s ease-in-out infinite alternate;
   background: linear-gradient(
     115deg,
     transparent 10%,
-    rgba(20, 99, 255, 0.08) 30%,
-    rgba(9, 205, 255, 0.12) 50%,
-    rgba(116, 84, 255, 0.08) 68%,
+    rgba(20, 99, 255, 0.045) 30%,
+    rgba(9, 205, 255, 0.065) 50%,
+    rgba(116, 84, 255, 0.04) 68%,
     transparent 88%
   );
   background-size: 180% 100%;
   content: "";
   filter: blur(20px);
-  inset: -36% -22%;
-  opacity: 0.62;
+  inset: -18% 12%;
+  opacity: 0.38;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-4%);
-  will-change: background-position, opacity, transform;
   z-index: 0;
 }
 
@@ -514,35 +510,33 @@ p {
 }
 
 .process-floaters span {
-  animation: process-floater-drift var(--duration, 18s) ease-in-out infinite alternate;
-  animation-delay: var(--delay, 0s);
   background: rgba(246, 249, 253, 0.84);
   border: 1px solid rgba(222, 228, 238, 0.82);
   border-radius: 999px;
   box-shadow: 0 12px 30px rgba(28, 37, 54, 0.05);
-  color: rgba(66, 73, 87, 0.42);
+  color: rgba(66, 73, 87, 0.34);
   font-size: 0.82rem;
   font-weight: 760;
   left: var(--x);
+  opacity: 0.2;
   padding: 8px 12px;
   position: absolute;
   top: var(--y);
   transform: translate(-50%, -50%);
   white-space: nowrap;
-  will-change: transform, opacity;
 }
 
 .process-floaters span:nth-child(1) {
   --delay: -2s;
   --duration: 20s;
-  --x: 13%;
+  --x: 22%;
   --y: 79%;
 }
 
 .process-floaters span:nth-child(2) {
   --delay: -9s;
   --duration: 24s;
-  --x: 24%;
+  --x: 31%;
   --y: 86%;
 }
 
@@ -556,14 +550,14 @@ p {
 .process-floaters span:nth-child(4) {
   --delay: -7s;
   --duration: 21s;
-  --x: 78%;
+  --x: 72%;
   --y: 72%;
 }
 
 .process-floaters span:nth-child(5) {
   --delay: -12s;
   --duration: 25s;
-  --x: 86%;
+  --x: 78%;
   --y: 86%;
 }
 
@@ -883,63 +877,6 @@ p {
 
   to {
     transform: translateX(calc(-50% - 7px));
-  }
-}
-
-@keyframes hero-ambient-shift {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.5;
-    transform: translateX(calc(-50% - 34px)) translateY(10px) scaleX(0.96);
-  }
-
-  50% {
-    background-position: 52% 50%;
-    opacity: 0.74;
-    transform: translateX(calc(-50% + 24px)) translateY(-8px) scaleX(1.08);
-  }
-
-  100% {
-    background-position: 100% 50%;
-    opacity: 0.58;
-    transform: translateX(calc(-50% - 12px)) translateY(6px) scaleX(1.01);
-  }
-}
-
-@keyframes board-ambient-drift {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.48;
-    transform: translateX(-5%) translateY(2%);
-  }
-
-  50% {
-    background-position: 58% 50%;
-    opacity: 0.68;
-    transform: translateX(3%) translateY(-2%);
-  }
-
-  100% {
-    background-position: 100% 50%;
-    opacity: 0.54;
-    transform: translateX(-1%) translateY(1%);
-  }
-}
-
-@keyframes process-floater-drift {
-  0% {
-    opacity: 0.16;
-    transform: translate(-50%, -50%) translate3d(-12px, 10px, 0);
-  }
-
-  50% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) translate3d(14px, -8px, 0);
-  }
-
-  100% {
-    opacity: 0.2;
-    transform: translate(-50%, -50%) translate3d(6px, 14px, 0);
   }
 }
 
@@ -1930,14 +1867,8 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-product::before,
-  .handoff-board::before,
-  .process-floaters span,
   .logo-track {
     animation: none;
-  }
-
-  .logo-track {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
