@@ -34,6 +34,316 @@ const finalProducts = [
   }
 ];
 
+const copy = {
+  es: {
+    nav: {
+      services: "Servicios",
+      prices: "Precios",
+      process: "Proceso",
+      cta: "Pedir vista",
+      menuOpen: "Abrir menú",
+      menuClose: "Cerrar menú",
+      label: "Principal",
+      toggle: "Cambiar a inglés"
+    },
+    hero: {
+      titleStart: "Ve cómo se vería tu sitio ",
+      titleEmphasis: "antes de pagar",
+      subtitle:
+        "Nos envías los detalles del negocio, preparamos una página de muestra y, si te gusta, pagas $100 para recibirla lista para usar.",
+      primary: "Pedir vista",
+      secondary: "Cómo funciona"
+    },
+    logoContext: "Para negocios de cualquier industria. Construido con herramientas modernas.",
+    proofLabel: "Tecnologías que puede usar Elevalo",
+    process: {
+      label: "Cómo funciona.",
+      title: "Primero ves una muestra. Solo pagas si te gusta.",
+      text:
+        "La idea es que no pagues por adivinar. Usamos tu formulario para crear una página de muestra y luego decides si quieres recibirla.",
+      steps: [
+        {
+          title: "Completas el formulario",
+          text:
+            "Envías el nombre del negocio, servicios, estilo, pueblo y el objetivo principal de la página."
+        },
+        {
+          title: "Recibes una página de muestra",
+          text:
+            "Preparamos una vista real con tus detalles para que veas el estilo, la estructura y el mensaje antes de pagar."
+        },
+        {
+          title: "Pagas $100 si te gusta",
+          text:
+            "Si apruebas la muestra, pagas $100 y recibes esa página lista para usar, publicar o conectar a tu dominio."
+        }
+      ]
+    },
+    tools: {
+      title: "Herramientas que hacen visible a tu negocio.",
+      text:
+        "Elevalo se enfoca primero en el sitio web: una página clara, móvil, profesional y preparada para crecer con extras cuando hagan falta.",
+      cards: [
+        {
+          title: "Sitio web claro",
+          text: "Una página móvil con servicios, horario, ubicación y contacto directo."
+        },
+        {
+          title: "SEO local básico",
+          text:
+            "Estructura, títulos, ubicación y conexión con el perfil de Google para que el negocio se entienda mejor."
+        },
+        {
+          title: "Formulario de contacto",
+          text: "Un formulario simple para solicitudes, reservas, estimados o mensajes de clientes."
+        },
+        {
+          title: "Dominio y correo",
+          text: "Orientación para que el negocio use dominio, correo profesional y enlaces correctos."
+        }
+      ]
+    },
+    showcase: {
+      aria: "Producto final de muestra",
+      label: "Resultado listo para revisar",
+      title: "Una página real, no una maqueta genérica.",
+      textBefore: "Así presentamos el sabor, la historia y las ubicaciones de",
+      textAfter: "en una experiencia lista para compartir antes de aprobar.",
+      pill: "Proyecto de muestra",
+      cta: "Ver página web",
+      marqueeLabel: "Capturas de",
+      openLabel: "Abrir página web de",
+      imageAlt: "sección"
+    },
+    pricing: {
+      title: "Precios claros para empezar.",
+      text: "Primero ves la muestra. El pago llega cuando sabes que te gusta.",
+      packages: [
+        {
+          name: "Vista previa",
+          price: "$0",
+          text: "Solicitas una muestra con los detalles de tu negocio antes de pagar.",
+          bullets: ["Formulario inicial", "Estilo personalizado", "Página de muestra"]
+        },
+        {
+          name: "Página inicial",
+          price: "$100",
+          text: "Si te gusta la muestra, pagas y recibes esa página lista para usar.",
+          bullets: ["Diseño responsive", "Secciones esenciales", "Entrega para publicar"]
+        },
+        {
+          name: "Publicación completa",
+          price: "Desde $250",
+          text: "Para conectar dominio, formulario, perfil de Google y ajustes finales.",
+          bullets: ["Dominio y formulario", "SEO local básico", "Ajustes finales"]
+        }
+      ],
+      addOnTitle: "Extras opcionales",
+      addOnText: "Extras digitales se cotizan aparte cuando el negocio los necesita.",
+      addOns: [
+        "Menú digital para restaurantes",
+        "Enlaces para reseñas o contacto",
+        "Botón de mensaje",
+        "Actualizaciones de menú",
+        "Formularios avanzados"
+      ]
+    },
+    contact: {
+      label: "Solicita tu muestra",
+      title: "Cuéntanos qué debe decir tu página.",
+      text:
+        "Con estos detalles preparamos una primera vista de tu página. Si apruebas el resultado, pagas $100 para recibir la página.",
+      fields: {
+        businessName: "Nombre del negocio",
+        businessPlaceholder: "Ej. Café Local",
+        businessType: "Tipo de negocio",
+        select: "Selecciona una opción",
+        businessOptions: ["Barbería / salón", "Restaurante / café", "Contratista / servicio", "Otro"],
+        goal: "Objetivo principal",
+        goalOptions: [
+          "Recibir llamadas",
+          "Recibir reservas o citas",
+          "Recibir solicitudes por formulario",
+          "Mostrar servicios y precios"
+        ],
+        details: "Detalles para la muestra",
+        detailsPlaceholder: "Servicios, horarios, pueblo, estilo, enlaces, fotos o ideas..."
+      },
+      submit: "Solicitar vista previa",
+      status:
+        "Solicitud de muestra preparada. Conecta este formulario a correo, Tally o tu sistema de clientes cuando publiques el sitio."
+    },
+    preview: {
+      aria: "Vista previa del servicio",
+      path: "elevalo.digital/proceso",
+      status: "Muestra en revisión",
+      floaters: ["Servicios", "Estilo", "Contacto", "Responsive", "Formulario", "Fotos"],
+      requestLabel: "1. Solicitud",
+      requestTitle: "Detalles del negocio",
+      requestText: "Nombre, servicios, estilo, pueblo, fotos y objetivo principal.",
+      previewLabel: "2. Muestra web",
+      previewTitle: "Una landing lista para revisar",
+      approvalLabel: "3. Aprobación",
+      approvalTitle: "Pagas solo si te gusta",
+      approvalText: "Recibes la página para usarla, publicarla o conectarla."
+    }
+  },
+  en: {
+    nav: {
+      services: "Services",
+      prices: "Pricing",
+      process: "Process",
+      cta: "Request preview",
+      menuOpen: "Open menu",
+      menuClose: "Close menu",
+      label: "Main",
+      toggle: "Switch to Spanish"
+    },
+    hero: {
+      titleStart: "See what your website could look like ",
+      titleEmphasis: "before you pay",
+      subtitle:
+        "Send us your business details, we prepare a real preview page, and if you like it, you pay $100 to receive it ready to use.",
+      primary: "Request preview",
+      secondary: "How it works"
+    },
+    logoContext: "For businesses in any industry. Built with modern tools.",
+    proofLabel: "Technologies Elevalo can use",
+    process: {
+      label: "How it works.",
+      title: "First you see a sample. You only pay if you like it.",
+      text:
+        "The idea is simple: you do not pay for a guess. We use your form to create a real preview page, then you decide if you want to receive it.",
+      steps: [
+        {
+          title: "You complete the form",
+          text: "Send the business name, services, style, town, and the main goal for the page."
+        },
+        {
+          title: "You receive a sample page",
+          text:
+            "We prepare a real view with your details so you can review the style, structure, and message before paying."
+        },
+        {
+          title: "You pay $100 if you like it",
+          text:
+            "If you approve the preview, you pay $100 and receive that page ready to use, publish, or connect to your domain."
+        }
+      ]
+    },
+    tools: {
+      title: "Tools that make your business visible.",
+      text:
+        "Elevalo starts with the website: a clear, mobile-friendly, professional page ready to grow with extras when needed.",
+      cards: [
+        {
+          title: "Clear website",
+          text: "A mobile page with services, hours, location, and direct contact."
+        },
+        {
+          title: "Basic local SEO",
+          text:
+            "Structure, titles, location, and Google profile connection so the business is easier to understand."
+        },
+        {
+          title: "Contact form",
+          text: "A simple form for requests, bookings, estimates, or customer messages."
+        },
+        {
+          title: "Domain and email",
+          text: "Guidance so the business can use a domain, professional email, and correct links."
+        }
+      ]
+    },
+    showcase: {
+      aria: "Sample final product",
+      label: "Ready to review",
+      title: "A real page, not a generic mockup.",
+      textBefore: "This is how we present the flavor, story, and locations of",
+      textAfter: "in an experience ready to share before approval.",
+      pill: "Sample project",
+      cta: "View website",
+      marqueeLabel: "Screenshots of",
+      openLabel: "Open website for",
+      imageAlt: "section"
+    },
+    pricing: {
+      title: "Clear pricing to get started.",
+      text: "First you see the sample. Payment only happens when you know you like it.",
+      packages: [
+        {
+          name: "Preview",
+          price: "$0",
+          text: "Request a sample using your business details before paying.",
+          bullets: ["Initial form", "Custom style", "Sample page"]
+        },
+        {
+          name: "Starter page",
+          price: "$100",
+          text: "If you like the sample, you pay and receive that page ready to use.",
+          bullets: ["Responsive design", "Essential sections", "Ready to publish"]
+        },
+        {
+          name: "Full publishing",
+          price: "From $250",
+          text: "For connecting domain, form, Google profile, and final adjustments.",
+          bullets: ["Domain and form", "Basic local SEO", "Final adjustments"]
+        }
+      ],
+      addOnTitle: "Optional extras",
+      addOnText: "Digital extras are quoted separately when the business needs them.",
+      addOns: [
+        "Digital menu for restaurants",
+        "Review or contact links",
+        "Message button",
+        "Menu updates",
+        "Advanced forms"
+      ]
+    },
+    contact: {
+      label: "Request your sample",
+      title: "Tell us what your page should say.",
+      text:
+        "With these details, we prepare the first view of your page. If you approve the result, you pay $100 to receive the page.",
+      fields: {
+        businessName: "Business name",
+        businessPlaceholder: "Ex. Local Cafe",
+        businessType: "Business type",
+        select: "Select an option",
+        businessOptions: ["Barbershop / salon", "Restaurant / cafe", "Contractor / service", "Other"],
+        goal: "Main goal",
+        goalOptions: [
+          "Receive calls",
+          "Receive bookings or appointments",
+          "Receive form requests",
+          "Show services and prices"
+        ],
+        details: "Details for the sample",
+        detailsPlaceholder: "Services, hours, town, style, links, photos, or ideas..."
+      },
+      submit: "Request preview",
+      status:
+        "Sample request prepared. Connect this form to email, Tally, or your customer system when you publish the site."
+    },
+    preview: {
+      aria: "Service preview",
+      path: "elevalo.digital/process",
+      status: "Sample in review",
+      floaters: ["Services", "Style", "Contact", "Responsive", "Form", "Photos"],
+      requestLabel: "1. Request",
+      requestTitle: "Business details",
+      requestText: "Name, services, style, town, photos, and main goal.",
+      previewLabel: "2. Web sample",
+      previewTitle: "A landing page ready to review",
+      approvalLabel: "3. Approval",
+      approvalTitle: "Pay only if you like it",
+      approvalText: "Receive the page to use, publish, or connect."
+    }
+  }
+};
+
+const toolIcons = [Globe2, SearchCheck, FileText, Mail];
+
 const techLogos = [
   { id: "react", name: "React" },
   { id: "next", name: "Next.js" },
@@ -45,111 +355,60 @@ const techLogos = [
   { id: "tally", name: "Tally" }
 ];
 
-const steps = [
-  {
-    title: "Completas el formulario",
-    text: "Envías el nombre del negocio, servicios, estilo, pueblo y el objetivo principal de la página."
-  },
-  {
-    title: "Recibes una página de muestra",
-    text: "Preparamos una vista real con tus detalles para que veas el estilo, la estructura y el mensaje antes de pagar."
-  },
-  {
-    title: "Pagas $100 si te gusta",
-    text: "Si apruebas la muestra, pagas $100 y recibes esa página lista para usar, publicar o conectar a tu dominio."
-  }
-];
-
-const tools = [
-  {
-    icon: Globe2,
-    title: "Sitio web claro",
-    text: "Una página móvil con servicios, horario, ubicación y contacto directo."
-  },
-  {
-    icon: SearchCheck,
-    title: "SEO local básico",
-    text: "Estructura, títulos, ubicación y conexión con el perfil de Google para que el negocio se entienda mejor."
-  },
-  {
-    icon: FileText,
-    title: "Formulario de contacto",
-    text: "Un formulario simple para solicitudes, reservas, estimados o mensajes de clientes."
-  },
-  {
-    icon: Mail,
-    title: "Dominio y correo",
-    text: "Orientación para que el negocio use dominio, correo profesional y enlaces correctos."
-  }
-];
-
-const packages = [
-  {
-    name: "Vista previa",
-    price: "$0",
-    text: "Solicitas una muestra con los detalles de tu negocio antes de pagar.",
-    bullets: ["Formulario inicial", "Estilo personalizado", "Página de muestra"]
-  },
-  {
-    name: "Página inicial",
-    price: "$100",
-    text: "Si te gusta la muestra, pagas y recibes esa página lista para usar.",
-    bullets: ["Diseño responsive", "Secciones esenciales", "Entrega para publicar"]
-  },
-  {
-    name: "Publicación completa",
-    price: "Desde $250",
-    text: "Para conectar dominio, formulario, perfil de Google y ajustes finales.",
-    bullets: ["Dominio y formulario", "SEO local básico", "Ajustes finales"]
-  }
-];
-
-const addOns = [
-  "Menú digital para restaurantes",
-  "Enlaces para reseñas o contacto",
-  "Botón de mensaje",
-  "Actualizaciones de menú",
-  "Formularios avanzados"
-];
-
 function App() {
+  const [language, setLanguage] = useState("es");
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeStep, setActiveStep] = useState(null);
+  const t = copy[language];
+  const nextLanguage = language === "es" ? "en" : "es";
 
   function handleSubmit(event) {
     event.preventDefault();
     setSubmitted(true);
   }
 
+  function handleLanguageToggle() {
+    setLanguage(nextLanguage);
+    setMenuOpen(false);
+  }
+
   return (
-    <div className="site-shell">
+    <div className="site-shell" lang={language}>
       <header className="nav-wrap">
         <a className="brand" href="#inicio" aria-label="Elevalo">
           <img className="brand-logo" src={elevaloLogo} alt="" aria-hidden="true" />
         </a>
 
-        <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Principal">
+        <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label={t.nav.label}>
           <a href="#producto" onClick={() => setMenuOpen(false)}>
-            Servicios
+            {t.nav.services}
             <ChevronDown />
           </a>
           <a href="#paquetes" onClick={() => setMenuOpen(false)}>
-            Precios
+            {t.nav.prices}
           </a>
           <a href="#proceso" onClick={() => setMenuOpen(false)}>
-            Proceso
+            {t.nav.process}
           </a>
         </nav>
 
         <div className="nav-actions">
+          <button
+            className="language-toggle"
+            type="button"
+            aria-label={t.nav.toggle}
+            onClick={handleLanguageToggle}
+          >
+            {nextLanguage.toUpperCase()}
+          </button>
           <a href="#contacto" className="nav-cta">
-            Pedir vista
+            {t.nav.cta}
           </a>
           <button
             className="menu-button"
             type="button"
-            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={menuOpen ? t.nav.menuClose : t.nav.menuOpen}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((value) => !value)}
           >
@@ -160,37 +419,30 @@ function App() {
 
       <main>
         <section className="hero-section" id="inicio">
-          <div className="eyebrow">
-            <span aria-hidden="true" />
-            Primero ves la muestra. Luego decides.
-          </div>
-
           <h1>
-            Ve cómo se vería tu sitio <em>antes de pagar</em>
+            {t.hero.titleStart}
+            <em>{t.hero.titleEmphasis}</em>
           </h1>
 
-          <p className="hero-subtitle">
-            Nos envías los detalles del negocio, preparamos una página de muestra y,
-            si te gusta, pagas $100 para recibirla lista para usar.
-          </p>
+          <p className="hero-subtitle">{t.hero.subtitle}</p>
 
           <div className="hero-actions">
             <a href="#contacto" className="primary-button">
-              Pedir vista
+              {t.hero.primary}
             </a>
             <a href="#proceso" className="secondary-button">
-              Cómo funciona
+              {t.hero.secondary}
             </a>
           </div>
         </section>
 
-        <HeroProductPreview />
+        <HeroProductPreview copy={t.preview} />
 
-        <section className="logo-context" aria-label="Servicios para cualquier industria">
-          <p>Para negocios de cualquier industria. Construido con herramientas modernas.</p>
+        <section className="logo-context" aria-label={t.logoContext}>
+          <p>{t.logoContext}</p>
         </section>
 
-        <section className="proof-strip" aria-label="Tecnologías que puede usar Elevalo">
+        <section className="proof-strip" aria-label={t.proofLabel}>
           <div className="logo-marquee" aria-hidden="true">
             <div className="logo-track">
               {[...techLogos, ...techLogos].map((item, index) => (
@@ -205,16 +457,13 @@ function App() {
 
         <section className="how-section" id="proceso">
           <div className="how-copy">
-            <span className="section-label">Cómo funciona.</span>
-            <h2>Primero ves una muestra. Solo pagas si te gusta.</h2>
-            <p>
-              La idea es que no pagues por adivinar. Usamos tu formulario para
-              crear una página de muestra y luego decides si quieres recibirla.
-            </p>
+            <span className="section-label">{t.process.label}</span>
+            <h2>{t.process.title}</h2>
+            <p>{t.process.text}</p>
           </div>
 
           <div className="step-list">
-            {steps.map((step, index) => (
+            {t.process.steps.map((step, index) => (
               <article
                 className={index === activeStep ? "step-row active" : "step-row"}
                 key={step.title}
@@ -236,16 +485,13 @@ function App() {
 
         <section className="tools-section" id="producto">
           <div className="section-heading">
-            <h2>Herramientas que hacen visible a tu negocio.</h2>
-            <p>
-              Elevalo se enfoca primero en el sitio web: una página clara,
-              móvil, profesional y preparada para crecer con extras cuando hagan falta.
-            </p>
+            <h2>{t.tools.title}</h2>
+            <p>{t.tools.text}</p>
           </div>
 
           <div className="tool-grid">
-            {tools.map((tool) => {
-              const Icon = tool.icon;
+            {t.tools.cards.map((tool, index) => {
+              const Icon = toolIcons[index];
               return (
                 <article className="tool-card" key={tool.title}>
                   <Icon />
@@ -257,16 +503,16 @@ function App() {
           </div>
         </section>
 
-        <FinalProductShowcase product={finalProducts[0]} />
+        <FinalProductShowcase product={finalProducts[0]} copy={t.showcase} />
 
         <section className="pricing-section" id="paquetes">
           <div className="section-heading">
-            <h2>Precios claros para empezar.</h2>
-            <p>Primero ves la muestra. El pago llega cuando sabes que te gusta.</p>
+            <h2>{t.pricing.title}</h2>
+            <p>{t.pricing.text}</p>
           </div>
 
           <div className="pricing-grid">
-            {packages.map((item) => (
+            {t.pricing.packages.map((item) => (
               <article className="pricing-card" key={item.name}>
                 <h3>{item.name}</h3>
                 <strong>{item.price}</strong>
@@ -285,11 +531,11 @@ function App() {
 
           <div className="addon-panel">
             <div>
-              <span>Extras opcionales</span>
-              <p>Extras digitales se cotizan aparte cuando el negocio los necesita.</p>
+              <span>{t.pricing.addOnTitle}</span>
+              <p>{t.pricing.addOnText}</p>
             </div>
             <div className="addon-list">
-              {addOns.map((item) => (
+              {t.pricing.addOns.map((item) => (
                 <span key={item}>{item}</span>
               ))}
             </div>
@@ -298,57 +544,47 @@ function App() {
 
         <section className="contact-section" id="contacto">
           <div className="contact-copy">
-            <span className="section-label">Solicita tu muestra</span>
-            <h2>Cuéntanos qué debe decir tu página.</h2>
-            <p>
-              Con estos detalles preparamos una primera vista de tu página.
-              Si apruebas el resultado, pagas $100 para recibir la página.
-            </p>
+            <span className="section-label">{t.contact.label}</span>
+            <h2>{t.contact.title}</h2>
+            <p>{t.contact.text}</p>
           </div>
 
           <form className="lead-form" onSubmit={handleSubmit}>
             <label>
-              Nombre del negocio
-              <input type="text" placeholder="Ej. Café Local" />
+              {t.contact.fields.businessName}
+              <input type="text" placeholder={t.contact.fields.businessPlaceholder} />
             </label>
             <label>
-              Tipo de negocio
+              {t.contact.fields.businessType}
               <select defaultValue="">
                 <option value="" disabled>
-                  Selecciona una opción
+                  {t.contact.fields.select}
                 </option>
-                <option>Barbería / salón</option>
-                <option>Restaurante / café</option>
-                <option>Contratista / servicio</option>
-                <option>Otro</option>
+                {t.contact.fields.businessOptions.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
               </select>
             </label>
             <label>
-              Objetivo principal
+              {t.contact.fields.goal}
               <select defaultValue="">
                 <option value="" disabled>
-                  Selecciona una opción
+                  {t.contact.fields.select}
                 </option>
-                <option>Recibir llamadas</option>
-                <option>Recibir reservas o citas</option>
-                <option>Recibir solicitudes por formulario</option>
-                <option>Mostrar servicios y precios</option>
+                {t.contact.fields.goalOptions.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
               </select>
             </label>
             <label>
-              Detalles para la muestra
-              <textarea rows="4" placeholder="Servicios, horarios, pueblo, estilo, enlaces, fotos o ideas..." />
+              {t.contact.fields.details}
+              <textarea rows="4" placeholder={t.contact.fields.detailsPlaceholder} />
             </label>
             <button type="submit">
-              Solicitar vista previa
+              {t.contact.submit}
               <Send />
             </button>
-            {submitted && (
-              <p className="form-status">
-                Solicitud de muestra preparada. Conecta este formulario a correo,
-                Tally o tu sistema de clientes cuando publiques el sitio.
-              </p>
-            )}
+            {submitted && <p className="form-status">{t.contact.status}</p>}
           </form>
         </section>
       </main>
@@ -459,36 +695,35 @@ function TechMark({ id }) {
   );
 }
 
-function FinalProductShowcase({ product }) {
+function FinalProductShowcase({ product, copy }) {
   const marqueeGroups = [0, 1, 2];
 
   return (
-    <section className="final-product-section" aria-label="Producto final de muestra">
+    <section className="final-product-section" aria-label={copy.aria}>
       <article className="recent-work-showcase">
         <div className="final-product-copy">
-          <span className="section-label">Sección por sección</span>
+          <span className="section-label">{copy.label}</span>
           <div>
-            <h2>La muestra se ve como la navegaría un cliente real.</h2>
+            <h2>{copy.title}</h2>
             <p>
-              Inicio, calidad, receta y ubicación avanzan en capturas reales de{" "}
-              {product.name} para revisar el flujo completo antes de aprobar.
+              {copy.textBefore} {product.name} {copy.textAfter}
             </p>
           </div>
           <div className="final-product-actions">
-            <span className="final-product-pill">Vista real en movimiento</span>
+            <span className="final-product-pill">{copy.pill}</span>
             <a
               className="final-product-link"
               href={product.url}
               target="_blank"
               rel="noreferrer"
             >
-              Ver página web
+              {copy.cta}
               <ExternalLink />
             </a>
           </div>
         </div>
 
-        <div className="recent-sites-marquee" aria-label={`Capturas de ${product.name}`}>
+        <div className="recent-sites-marquee" aria-label={`${copy.marqueeLabel} ${product.name}`}>
           <div className="recent-sites-track">
             {marqueeGroups.map((group) => (
               <div
@@ -504,11 +739,11 @@ function FinalProductShowcase({ product }) {
                     rel="noreferrer"
                     target="_blank"
                     tabIndex={group === 0 ? undefined : -1}
-                    aria-label={`Abrir página web de ${product.name}`}
+                    aria-label={`${copy.openLabel} ${product.name}`}
                   >
                     <img
                       src={screenshot.image}
-                      alt={group === 0 ? `${product.name}: sección ${screenshot.label}` : ""}
+                      alt={group === 0 ? `${product.name}: ${copy.imageAlt} ${screenshot.label}` : ""}
                       loading={group === 0 ? "eager" : "lazy"}
                       decoding="async"
                     />
@@ -523,9 +758,9 @@ function FinalProductShowcase({ product }) {
   );
 }
 
-function HeroProductPreview() {
+function HeroProductPreview({ copy }) {
   return (
-    <section className="hero-product" aria-label="Vista previa del servicio">
+    <section className="hero-product" aria-label={copy.aria}>
       <div className="hero-product-shell">
         <div className="hero-product-window">
           <div className="preview-browser-bar">
@@ -534,29 +769,26 @@ function HeroProductPreview() {
               <span />
               <span />
             </div>
-            <strong>elevalo.digital/proceso</strong>
-            <span className="preview-status">Muestra en revisión</span>
+            <strong>{copy.path}</strong>
+            <span className="preview-status">{copy.status}</span>
           </div>
 
           <div className="handoff-board">
             <div className="process-floaters" aria-hidden="true">
-              <span>Servicios</span>
-              <span>Estilo</span>
-              <span>Contacto</span>
-              <span>Responsive</span>
-              <span>Formulario</span>
-              <span>Fotos</span>
+              {copy.floaters.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
             </div>
 
             <article className="handoff-card request-card">
-              <span className="handoff-label">1. Solicitud</span>
-              <h3>Detalles del negocio</h3>
-              <p>Nombre, servicios, estilo, pueblo, fotos y objetivo principal.</p>
+              <span className="handoff-label">{copy.requestLabel}</span>
+              <h3>{copy.requestTitle}</h3>
+              <p>{copy.requestText}</p>
             </article>
 
             <article className="handoff-card preview-card">
-              <span className="handoff-label">2. Muestra web</span>
-              <h3>Una landing lista para revisar</h3>
+              <span className="handoff-label">{copy.previewLabel}</span>
+              <h3>{copy.previewTitle}</h3>
               <div className="wireframe-preview" aria-hidden="true">
                 <span className="wire-hero" />
                 <span className="wire-copy" />
@@ -570,10 +802,10 @@ function HeroProductPreview() {
             </article>
 
             <article className="handoff-card approval-card">
-              <span className="handoff-label">3. Aprobación</span>
-              <h3>Pagas solo si te gusta</h3>
+              <span className="handoff-label">{copy.approvalLabel}</span>
+              <h3>{copy.approvalTitle}</h3>
               <div className="approval-price">$100</div>
-              <p>Recibes la página para usarla, publicarla o conectarla.</p>
+              <p>{copy.approvalText}</p>
             </article>
           </div>
         </div>
