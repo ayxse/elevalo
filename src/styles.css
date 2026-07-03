@@ -1487,12 +1487,12 @@ p {
 }
 
 .recent-sites-marquee::before {
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0));
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.05), rgba(15, 23, 42, 0));
   left: 0;
 }
 
 .recent-sites-marquee::after {
-  background: linear-gradient(270deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0));
+  background: linear-gradient(270deg, rgba(15, 23, 42, 0.05), rgba(15, 23, 42, 0));
   right: 0;
 }
 
