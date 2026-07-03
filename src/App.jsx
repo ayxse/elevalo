@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   CheckCircle2,
   ChevronDown,
+  ExternalLink,
   FileText,
   Globe2,
   Mail,
@@ -11,6 +12,27 @@ import {
   X
 } from "lucide-react";
 import elevaloLogo from "./assets/elevalo-logo.png";
+import martinsCalidad from "./assets/previews/calidad-scroll.jpg";
+import martinsInicio from "./assets/previews/inicio-scroll.jpg";
+import martinsReceta from "./assets/previews/receta-scroll.jpg";
+import martinsUbicaciones from "./assets/previews/ubicaciones-scroll.jpg";
+
+const martinsPreviewUrl = "https://ayxse.github.io/MartinsPizza/#";
+
+const martinsSections = [
+  { label: "Inicio", image: martinsInicio },
+  { label: "Calidad", image: martinsCalidad },
+  { label: "Receta", image: martinsReceta },
+  { label: "Ubicación", image: martinsUbicaciones }
+];
+
+const finalProducts = [
+  {
+    name: "Martin's Pizza Palace",
+    url: martinsPreviewUrl,
+    screenshots: martinsSections
+  }
+];
 
 const techLogos = [
   { id: "react", name: "React" },
@@ -235,27 +257,7 @@ function App() {
           </div>
         </section>
 
-        <section className="showcase-section">
-          <div className="showcase-card preview-flow-card">
-            <span className="showcase-label">Antes de pagar</span>
-            <h3>Ves una página real usando los detalles de tu negocio.</h3>
-            <div className="mini-flow" aria-label="Flujo del servicio">
-              <span>Formulario</span>
-              <span>Vista previa</span>
-              <span>Aprobación</span>
-            </div>
-          </div>
-          <div className="showcase-card deliverable-card">
-            <span className="showcase-label">$100 al aprobar</span>
-            <h3>Recibes la página para usarla, publicarla o conectarla.</h3>
-            <div className="deliverable-list">
-              <span>Página responsive</span>
-              <span>Texto base organizado</span>
-              <span>Formulario preparado</span>
-              <span>Guía de próximos pasos</span>
-            </div>
-          </div>
-        </section>
+        <FinalProductShowcase product={finalProducts[0]} />
 
         <section className="pricing-section" id="paquetes">
           <div className="section-heading">
@@ -454,6 +456,70 @@ function TechMark({ id }) {
       <rect x="7" y="6" width="18" height="20" rx="5" fill="currentColor" opacity="0.12" />
       <path d="M10 10h12v3H10v-3Zm0 5h12v3H10v-3Zm0 5h7v3h-7v-3Z" fill="currentColor" />
     </svg>
+  );
+}
+
+function FinalProductShowcase({ product }) {
+  const marqueeGroups = [0, 1, 2];
+
+  return (
+    <section className="final-product-section" aria-label="Producto final de muestra">
+      <article className="recent-work-showcase">
+        <div className="final-product-copy">
+          <span className="section-label">Sección por sección</span>
+          <div>
+            <h2>La muestra se ve como la navegaría un cliente real.</h2>
+            <p>
+              Inicio, calidad, receta y ubicación avanzan en capturas reales de{" "}
+              {product.name} para revisar el flujo completo antes de aprobar.
+            </p>
+          </div>
+          <div className="final-product-actions">
+            <span className="final-product-pill">Vista real en movimiento</span>
+            <a
+              className="final-product-link"
+              href={product.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver página web
+              <ExternalLink />
+            </a>
+          </div>
+        </div>
+
+        <div className="recent-sites-marquee" aria-label={`Capturas de ${product.name}`}>
+          <div className="recent-sites-track">
+            {marqueeGroups.map((group) => (
+              <div
+                className="recent-sites-group"
+                key={group}
+                aria-hidden={group === 0 ? undefined : true}
+              >
+                {product.screenshots.map((screenshot) => (
+                  <a
+                    className="recent-site-card"
+                    href={product.url}
+                    key={`${screenshot.label}-${group}`}
+                    rel="noreferrer"
+                    target="_blank"
+                    tabIndex={group === 0 ? undefined : -1}
+                    aria-label={`Abrir página web de ${product.name}`}
+                  >
+                    <img
+                      src={screenshot.image}
+                      alt={group === 0 ? `${product.name}: sección ${screenshot.label}` : ""}
+                      loading={group === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
+    </section>
   );
 }
 
