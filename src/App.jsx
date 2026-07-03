@@ -742,15 +742,15 @@ function SiteHeader({ menuOpen, nextLanguage, onLanguageToggle, setMenuOpen, t }
       </a>
 
       <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label={t.nav.label}>
+        <a href="#proceso" onClick={() => setMenuOpen(false)}>
+          {t.nav.process}
+          <ChevronDown />
+        </a>
         <a href="#producto" onClick={() => setMenuOpen(false)}>
           {t.nav.services}
-          <ChevronDown />
         </a>
         <a href="#paquetes" onClick={() => setMenuOpen(false)}>
           {t.nav.prices}
-        </a>
-        <a href="#proceso" onClick={() => setMenuOpen(false)}>
-          {t.nav.process}
         </a>
       </nav>
 
