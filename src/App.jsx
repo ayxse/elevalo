@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
+  ArrowLeft,
   CheckCircle2,
   ChevronDown,
   ExternalLink,
@@ -120,45 +121,82 @@ const copy = {
       text: "Primero ves la muestra. El pago llega cuando sabes que te gusta.",
       packages: [
         {
-          name: "Vista previa",
+          name: "Vista",
           price: "$0",
-          text: "Solicitas una muestra con los detalles de tu negocio antes de pagar.",
-          bullets: ["Formulario inicial", "Estilo personalizado", "Página de muestra"]
+          text: "Preparamos una muestra con la información de tu negocio. No pagas por verla.",
+          bullets: ["Solicitud del negocio", "Estilo sugerido", "Página para revisar"]
         },
         {
           name: "Página inicial",
           price: "$100",
-          text: "Si te gusta la muestra, pagas y recibes esa página lista para usar.",
-          bullets: ["Diseño responsive", "Secciones esenciales", "Entrega para publicar"]
+          text: "Si apruebas la muestra, pagas y recibes esa página lista para usar.",
+          bullets: ["Se ve bien en celular", "Secciones principales", "Archivos para publicar"]
         },
         {
           name: "Publicación completa",
           price: "Desde $250",
-          text: "Para conectar dominio, formulario, perfil de Google y ajustes finales.",
-          bullets: ["Dominio y formulario", "SEO local básico", "Ajustes finales"]
+          text: "Para conectar dominio, formulario, perfil de Google y dejar todo listo en línea.",
+          bullets: ["Dominio conectado", "Formulario funcionando", "Ajustes finales"]
         }
       ],
-      addOnTitle: "Extras opcionales",
-      addOnText: "Extras digitales se cotizan aparte cuando el negocio los necesita.",
+      addOnTitle: "Después de publicar",
+      addOnQuote: "Empieza con una página clara. Cuando el negocio lo pida, añadimos funciones para elevar tu presencia digital.",
+      addOnText:
+        "Estos trabajos se cotizan aparte para que no pagues por cosas que todavía no necesitas.",
       addOns: [
-        "Menú digital para restaurantes",
-        "Enlaces para reseñas o contacto",
-        "Botón de mensaje",
-        "Actualizaciones de menú",
-        "Formularios avanzados"
+        {
+          title: "Vender mejor",
+          text: "Menú digital, servicios organizados o páginas específicas para ofertas."
+        },
+        {
+          title: "Recibir más mensajes",
+          text: "Botón de WhatsApp, enlaces de contacto y formularios con preguntas personalizadas."
+        },
+        {
+          title: "Ganar confianza",
+          text: "Enlace a reseñas de Google, ajustes de contenido y actualizaciones cuando cambie el negocio."
+        }
       ]
     },
     contact: {
-      label: "Solicita tu muestra",
-      title: "Cuéntanos qué debe decir tu página.",
+      label: "Solicitud de muestra",
+      title: "El brief completo vive en una página aparte.",
       text:
-        "Con estos detalles preparamos una primera vista de tu página. Si apruebas el resultado, pagas $100 para recibir la página.",
+        "La página principal se queda ligera. Cuando estés listo, abre la solicitud y comparte el contexto que necesitamos para preparar una vista real de tu negocio.",
+      cta: "Abrir solicitud",
+      cardLabel: "Qué vas a compartir",
+      cardTitle: "Logo, fotos, estilo y detalles del negocio en un solo lugar.",
+      cardText:
+        "La solicitud reúne el material importante sin interrumpir la experiencia principal del sitio.",
+      bullets: [
+        "Email, teléfono y WhatsApp opcional",
+        "Tipo de negocio, objetivo y área que atiende",
+        "Logo, imágenes, referencias, visión y servicios"
+      ],
       fields: {
+        contactSection: "Contacto",
         businessName: "Nombre del negocio",
         businessPlaceholder: "Ej. Café Local",
+        clientEmail: "Email del cliente",
+        clientEmailPlaceholder: "tu@email.com",
+        phone: "Teléfono",
+        phonePlaceholder: "(787) 000-0000",
+        useWhatsapp: "Quiero que me contacten por WhatsApp",
+        businessSection: "Negocio",
         businessType: "Tipo de negocio",
+        businessTypePlaceholder: "Ej. Pizzería, salón de uñas, contratista...",
+        businessTypeHint: "Puedes escribir el tipo exacto aunque no salga en la lista.",
         select: "Selecciona una opción",
-        businessOptions: ["Barbería / salón", "Restaurante / café", "Contratista / servicio", "Otro"],
+        businessOptions: [
+          "Restaurante / café",
+          "Barbería / salón",
+          "Contratista / servicio",
+          "Tienda / retail",
+          "Salud / bienestar",
+          "Otro"
+        ],
+        location: "Pueblo o área que atiende",
+        locationPlaceholder: "Ej. Vega Alta, Puerto Rico",
         goal: "Objetivo principal",
         goalOptions: [
           "Recibir llamadas",
@@ -166,12 +204,48 @@ const copy = {
           "Recibir solicitudes por formulario",
           "Mostrar servicios y precios"
         ],
-        details: "Detalles para la muestra",
-        detailsPlaceholder: "Servicios, horarios, pueblo, estilo, enlaces, fotos o ideas..."
+        vision: "Visión del negocio",
+        visionPlaceholder: "Qué quieres que el negocio represente o hacia dónde quieres llevarlo...",
+        mission: "Misión o historia",
+        missionPlaceholder: "Qué hacen, a quién ayudan y qué los hace diferentes...",
+        contentSection: "Contenido y estilo",
+        services: "Servicios, productos o menú principal",
+        servicesPlaceholder: "Lista los servicios, productos, paquetes, menú, horarios o precios que quieres mostrar...",
+        referenceSite: "Página que te guste como concepto",
+        referenceSitePlaceholder: "Pega un enlace de una página que te guste o describe el estilo...",
+        styleNotes: "Estilo que quieres",
+        styleNotesPlaceholder: "Moderno, elegante, familiar, minimal, colores favoritos, tono de voz...",
+        uploadSection: "Logo e imágenes",
+        logo: "Logo del negocio",
+        images: "Fotos para usar en la página",
+        uploadHint: "Puedes subir logo, fotos del local, productos, equipo, trabajos anteriores o cualquier imagen que ayude a crear la muestra.",
+        details: "Notas adicionales",
+        detailsPlaceholder: "Cualquier detalle importante: redes sociales, horarios, links, instrucciones o cosas que quieres evitar..."
       },
       submit: "Solicitar vista previa",
       status:
         "Solicitud de muestra preparada. Conecta este formulario a correo, Tally o tu sistema de clientes cuando publiques el sitio."
+    },
+    requestPage: {
+      back: "Volver a la página principal",
+      label: "Brief de proyecto",
+      title: "Todo lo que necesitamos para crear tu primera vista.",
+      text:
+        "Completa esta solicitud con calma. Mientras más contexto compartas, más cerca queda la muestra de lo que tienes en mente.",
+      overview: [
+        {
+          title: "Contacto",
+          text: "Email, teléfono y preferencia de WhatsApp para poder dar seguimiento."
+        },
+        {
+          title: "Identidad",
+          text: "Logo, fotos, misión, visión y el estilo visual que quieres transmitir."
+        },
+        {
+          title: "Contenido",
+          text: "Servicios, productos, menú, referencias y notas para construir la página."
+        }
+      ]
     },
     preview: {
       aria: "Vista previa del servicio",
@@ -272,45 +346,82 @@ const copy = {
       text: "First you see the sample. Payment only happens when you know you like it.",
       packages: [
         {
-          name: "Preview",
+          name: "View",
           price: "$0",
-          text: "Request a sample using your business details before paying.",
-          bullets: ["Initial form", "Custom style", "Sample page"]
+          text: "We prepare a sample using your business information. You do not pay to see it.",
+          bullets: ["Business request", "Suggested style", "Page to review"]
         },
         {
           name: "Starter page",
           price: "$100",
-          text: "If you like the sample, you pay and receive that page ready to use.",
-          bullets: ["Responsive design", "Essential sections", "Ready to publish"]
+          text: "If you approve the sample, you pay and receive that page ready to use.",
+          bullets: ["Looks good on mobile", "Main sections", "Files ready to publish"]
         },
         {
           name: "Full publishing",
           price: "From $250",
-          text: "For connecting domain, form, Google profile, and final adjustments.",
-          bullets: ["Domain and form", "Basic local SEO", "Final adjustments"]
+          text: "For connecting domain, form, Google profile, and getting everything live.",
+          bullets: ["Connected domain", "Working form", "Final adjustments"]
         }
       ],
-      addOnTitle: "Optional extras",
-      addOnText: "Digital extras are quoted separately when the business needs them.",
+      addOnTitle: "After publishing",
+      addOnQuote: "Start with a clear page. When the business needs it, we add features to elevate your digital presence.",
+      addOnText:
+        "These are quoted separately so you do not pay for things you do not need yet.",
       addOns: [
-        "Digital menu for restaurants",
-        "Review or contact links",
-        "Message button",
-        "Menu updates",
-        "Advanced forms"
+        {
+          title: "Sell better",
+          text: "Digital menu, organized services, or specific pages for offers."
+        },
+        {
+          title: "Receive more messages",
+          text: "WhatsApp button, contact links, and forms with custom questions."
+        },
+        {
+          title: "Build trust",
+          text: "Google review link, content adjustments, and updates when the business changes."
+        }
       ]
     },
     contact: {
-      label: "Request your sample",
-      title: "Tell us what your page should say.",
+      label: "Sample request",
+      title: "The full brief lives on a separate page.",
       text:
-        "With these details, we prepare the first view of your page. If you approve the result, you pay $100 to receive the page.",
+        "The main page stays light. When you are ready, open the request and share the context we need to prepare a real first view of your business.",
+      cta: "Open request",
+      cardLabel: "What you will share",
+      cardTitle: "Logo, photos, style, and business details in one place.",
+      cardText:
+        "The request keeps the important material together without interrupting the main site experience.",
+      bullets: [
+        "Email, phone, and optional WhatsApp",
+        "Business type, main goal, and service area",
+        "Logo, images, references, vision, and services"
+      ],
       fields: {
+        contactSection: "Contact",
         businessName: "Business name",
         businessPlaceholder: "Ex. Local Cafe",
+        clientEmail: "Client email",
+        clientEmailPlaceholder: "you@email.com",
+        phone: "Phone",
+        phonePlaceholder: "(787) 000-0000",
+        useWhatsapp: "I want to be contacted by WhatsApp",
+        businessSection: "Business",
         businessType: "Business type",
+        businessTypePlaceholder: "Ex. Pizza shop, nail salon, contractor...",
+        businessTypeHint: "You can type the exact business type even if it is not listed.",
         select: "Select an option",
-        businessOptions: ["Barbershop / salon", "Restaurant / cafe", "Contractor / service", "Other"],
+        businessOptions: [
+          "Restaurant / cafe",
+          "Barbershop / salon",
+          "Contractor / service",
+          "Retail shop",
+          "Health / wellness",
+          "Other"
+        ],
+        location: "Town or service area",
+        locationPlaceholder: "Ex. Vega Alta, Puerto Rico",
         goal: "Main goal",
         goalOptions: [
           "Receive calls",
@@ -318,12 +429,48 @@ const copy = {
           "Receive form requests",
           "Show services and prices"
         ],
-        details: "Details for the sample",
-        detailsPlaceholder: "Services, hours, town, style, links, photos, or ideas..."
+        vision: "Business vision",
+        visionPlaceholder: "What you want the business to represent or where you want to take it...",
+        mission: "Mission or story",
+        missionPlaceholder: "What you do, who you help, and what makes you different...",
+        contentSection: "Content and style",
+        services: "Main services, products, or menu",
+        servicesPlaceholder: "List the services, products, packages, menu, hours, or prices you want to show...",
+        referenceSite: "Website you like as a concept",
+        referenceSitePlaceholder: "Paste a link to a website you like or describe the style...",
+        styleNotes: "Style you want",
+        styleNotesPlaceholder: "Modern, elegant, familiar, minimal, favorite colors, tone of voice...",
+        uploadSection: "Logo and images",
+        logo: "Business logo",
+        images: "Photos to use on the page",
+        uploadHint: "You can upload a logo, storefront photos, products, team photos, previous work, or any image that helps create the sample.",
+        details: "Additional notes",
+        detailsPlaceholder: "Anything important: social media, hours, links, instructions, or things you want to avoid..."
       },
       submit: "Request preview",
       status:
         "Sample request prepared. Connect this form to email, Tally, or your customer system when you publish the site."
+    },
+    requestPage: {
+      back: "Back to main page",
+      label: "Project brief",
+      title: "Everything we need to create your first preview.",
+      text:
+        "Complete this request at your own pace. The more context you share, the closer the sample gets to what you have in mind.",
+      overview: [
+        {
+          title: "Contact",
+          text: "Email, phone, and WhatsApp preference so we can follow up."
+        },
+        {
+          title: "Identity",
+          text: "Logo, photos, mission, vision, and the visual style you want to communicate."
+        },
+        {
+          title: "Content",
+          text: "Services, products, menu, references, and notes to build the page."
+        }
+      ]
     },
     preview: {
       aria: "Service preview",
@@ -360,8 +507,33 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeStep, setActiveStep] = useState(null);
+  const [route, setRoute] = useState(() => (typeof window === "undefined" ? "" : window.location.hash));
   const t = copy[language];
   const nextLanguage = language === "es" ? "en" : "es";
+  const isRequestPage = route === "#solicitud";
+
+  useEffect(() => {
+    function handleHashChange() {
+      setRoute(window.location.hash);
+      setMenuOpen(false);
+    }
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (route === "#solicitud") {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+
+    if (route) {
+      window.requestAnimationFrame(() => {
+        document.querySelector(route)?.scrollIntoView();
+      });
+    }
+  }, [route]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -373,52 +545,38 @@ function App() {
     setMenuOpen(false);
   }
 
+  if (isRequestPage) {
+    return (
+      <RequestPage
+        language={language}
+        menuOpen={menuOpen}
+        nextLanguage={nextLanguage}
+        onLanguageToggle={handleLanguageToggle}
+        onSubmit={handleSubmit}
+        setMenuOpen={setMenuOpen}
+        submitted={submitted}
+        t={t}
+      />
+    );
+  }
+
   return (
     <div className="site-shell" lang={language}>
-      <header className="nav-wrap">
-        <a className="brand" href="#inicio" aria-label="Elevalo">
-          <img className="brand-logo" src={elevaloLogo} alt="" aria-hidden="true" />
-        </a>
-
-        <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label={t.nav.label}>
-          <a href="#producto" onClick={() => setMenuOpen(false)}>
-            {t.nav.services}
-            <ChevronDown />
-          </a>
-          <a href="#paquetes" onClick={() => setMenuOpen(false)}>
-            {t.nav.prices}
-          </a>
-          <a href="#proceso" onClick={() => setMenuOpen(false)}>
-            {t.nav.process}
-          </a>
-        </nav>
-
-        <div className="nav-actions">
-          <button
-            className="language-toggle"
-            type="button"
-            aria-label={t.nav.toggle}
-            onClick={handleLanguageToggle}
-          >
-            {nextLanguage.toUpperCase()}
-          </button>
-          <a href="#contacto" className="nav-cta">
-            {t.nav.cta}
-          </a>
-          <button
-            className="menu-button"
-            type="button"
-            aria-label={menuOpen ? t.nav.menuClose : t.nav.menuOpen}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((value) => !value)}
-          >
-            {menuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </header>
+      <SiteHeader
+        menuOpen={menuOpen}
+        nextLanguage={nextLanguage}
+        onLanguageToggle={handleLanguageToggle}
+        setMenuOpen={setMenuOpen}
+        t={t}
+      />
 
       <main>
         <section className="hero-section" id="inicio">
+          <span
+            className="hero-brand-symbol"
+            style={{ "--symbol-url": `url(${elevaloLogo})` }}
+            aria-hidden="true"
+          />
           <h1>
             {t.hero.titleStart}
             <em>{t.hero.titleEmphasis}</em>
@@ -427,7 +585,7 @@ function App() {
           <p className="hero-subtitle">{t.hero.subtitle}</p>
 
           <div className="hero-actions">
-            <a href="#contacto" className="primary-button">
+            <a href="#solicitud" className="primary-button">
               {t.hero.primary}
             </a>
             <a href="#proceso" className="secondary-button">
@@ -532,11 +690,15 @@ function App() {
           <div className="addon-panel">
             <div>
               <span>{t.pricing.addOnTitle}</span>
+              <strong>{t.pricing.addOnQuote}</strong>
               <p>{t.pricing.addOnText}</p>
             </div>
             <div className="addon-list">
               {t.pricing.addOns.map((item) => (
-                <span key={item}>{item}</span>
+                <article className="addon-item" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
               ))}
             </div>
           </div>
@@ -549,46 +711,217 @@ function App() {
             <p>{t.contact.text}</p>
           </div>
 
-          <form className="lead-form" onSubmit={handleSubmit}>
-            <label>
-              {t.contact.fields.businessName}
-              <input type="text" placeholder={t.contact.fields.businessPlaceholder} />
-            </label>
-            <label>
-              {t.contact.fields.businessType}
-              <select defaultValue="">
-                <option value="" disabled>
-                  {t.contact.fields.select}
-                </option>
-                {t.contact.fields.businessOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              {t.contact.fields.goal}
-              <select defaultValue="">
-                <option value="" disabled>
-                  {t.contact.fields.select}
-                </option>
-                {t.contact.fields.goalOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              {t.contact.fields.details}
-              <textarea rows="4" placeholder={t.contact.fields.detailsPlaceholder} />
-            </label>
-            <button type="submit">
-              {t.contact.submit}
+          <div className="contact-brief-card">
+            <span>{t.contact.cardLabel}</span>
+            <h3>{t.contact.cardTitle}</h3>
+            <p>{t.contact.cardText}</p>
+            <ul>
+              {t.contact.bullets.map((bullet) => (
+                <li key={bullet}>
+                  <CheckCircle2 />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+            <a className="contact-request-link" href="#solicitud">
+              {t.contact.cta}
               <Send />
-            </button>
-            {submitted && <p className="form-status">{t.contact.status}</p>}
-          </form>
+            </a>
+          </div>
         </section>
       </main>
     </div>
+  );
+}
+
+function SiteHeader({ menuOpen, nextLanguage, onLanguageToggle, setMenuOpen, t }) {
+  return (
+    <header className="nav-wrap">
+      <a className="brand" href="#inicio" aria-label="Elevalo" onClick={() => setMenuOpen(false)}>
+        <img className="brand-logo" src={elevaloLogo} alt="" aria-hidden="true" />
+      </a>
+
+      <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label={t.nav.label}>
+        <a href="#producto" onClick={() => setMenuOpen(false)}>
+          {t.nav.services}
+          <ChevronDown />
+        </a>
+        <a href="#paquetes" onClick={() => setMenuOpen(false)}>
+          {t.nav.prices}
+        </a>
+        <a href="#proceso" onClick={() => setMenuOpen(false)}>
+          {t.nav.process}
+        </a>
+      </nav>
+
+      <div className="nav-actions">
+        <button
+          className="language-toggle"
+          type="button"
+          aria-label={t.nav.toggle}
+          onClick={onLanguageToggle}
+        >
+          {nextLanguage.toUpperCase()}
+        </button>
+        <a href="#solicitud" className="nav-cta" onClick={() => setMenuOpen(false)}>
+          {t.nav.cta}
+        </a>
+        <button
+          className="menu-button"
+          type="button"
+          aria-label={menuOpen ? t.nav.menuClose : t.nav.menuOpen}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((value) => !value)}
+        >
+          {menuOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+    </header>
+  );
+}
+
+function RequestPage({ language, menuOpen, nextLanguage, onLanguageToggle, onSubmit, setMenuOpen, submitted, t }) {
+  return (
+    <div className="site-shell request-shell" lang={language}>
+      <SiteHeader
+        menuOpen={menuOpen}
+        nextLanguage={nextLanguage}
+        onLanguageToggle={onLanguageToggle}
+        setMenuOpen={setMenuOpen}
+        t={t}
+      />
+
+      <main className="request-page">
+        <section className="request-layout">
+          <div className="request-intro">
+            <a className="back-link" href="#contacto">
+              <ArrowLeft />
+              {t.requestPage.back}
+            </a>
+            <div className="request-kicker">
+              <span
+                className="request-brand-symbol"
+                style={{ "--symbol-url": `url(${elevaloLogo})` }}
+                aria-hidden="true"
+              />
+              <span className="section-label">{t.requestPage.label}</span>
+            </div>
+            <h1>{t.requestPage.title}</h1>
+            <p>{t.requestPage.text}</p>
+
+            <div className="request-overview">
+              {t.requestPage.overview.map((item) => (
+                <article key={item.title}>
+                  <h2>{item.title}</h2>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <LeadForm onSubmit={onSubmit} submitted={submitted} t={t} />
+        </section>
+      </main>
+    </div>
+  );
+}
+
+function LeadForm({ onSubmit, submitted, t }) {
+  return (
+    <form className="lead-form" encType="multipart/form-data" onSubmit={onSubmit}>
+      <div className="form-section-title">{t.contact.fields.contactSection}</div>
+      <label>
+        {t.contact.fields.businessName}
+        <input type="text" name="businessName" placeholder={t.contact.fields.businessPlaceholder} required />
+      </label>
+      <label>
+        {t.contact.fields.clientEmail}
+        <input type="email" name="clientEmail" placeholder={t.contact.fields.clientEmailPlaceholder} required />
+      </label>
+      <label>
+        {t.contact.fields.phone}
+        <input type="tel" name="phone" placeholder={t.contact.fields.phonePlaceholder} />
+      </label>
+      <label className="checkbox-field">
+        <input type="checkbox" name="useWhatsapp" />
+        <span>{t.contact.fields.useWhatsapp}</span>
+      </label>
+
+      <div className="form-section-title">{t.contact.fields.businessSection}</div>
+      <label>
+        {t.contact.fields.businessType}
+        <input
+          type="text"
+          name="businessType"
+          list="business-type-options"
+          placeholder={t.contact.fields.businessTypePlaceholder}
+          required
+        />
+        <datalist id="business-type-options">
+          {t.contact.fields.businessOptions.map((option) => (
+            <option key={option} value={option} />
+          ))}
+        </datalist>
+        <small className="field-hint">{t.contact.fields.businessTypeHint}</small>
+      </label>
+      <label>
+        {t.contact.fields.location}
+        <input type="text" name="location" placeholder={t.contact.fields.locationPlaceholder} />
+      </label>
+      <label>
+        {t.contact.fields.goal}
+        <select name="goal" defaultValue="" required>
+          <option value="" disabled>
+            {t.contact.fields.select}
+          </option>
+          {t.contact.fields.goalOptions.map((option) => (
+            <option key={option}>{option}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        {t.contact.fields.vision}
+        <textarea name="vision" rows="3" placeholder={t.contact.fields.visionPlaceholder} />
+      </label>
+      <label className="full-field">
+        {t.contact.fields.mission}
+        <textarea name="mission" rows="3" placeholder={t.contact.fields.missionPlaceholder} />
+      </label>
+
+      <div className="form-section-title">{t.contact.fields.contentSection}</div>
+      <label className="full-field">
+        {t.contact.fields.services}
+        <textarea name="services" rows="4" placeholder={t.contact.fields.servicesPlaceholder} required />
+      </label>
+      <label>
+        {t.contact.fields.referenceSite}
+        <input type="url" name="referenceSite" placeholder={t.contact.fields.referenceSitePlaceholder} />
+      </label>
+      <label>
+        {t.contact.fields.styleNotes}
+        <textarea name="styleNotes" rows="3" placeholder={t.contact.fields.styleNotesPlaceholder} />
+      </label>
+
+      <div className="form-section-title">{t.contact.fields.uploadSection}</div>
+      <p className="upload-note">{t.contact.fields.uploadHint}</p>
+      <label>
+        {t.contact.fields.logo}
+        <input type="file" name="logo" accept="image/*,.pdf,.svg" />
+      </label>
+      <label>
+        {t.contact.fields.images}
+        <input type="file" name="businessImages" accept="image/*" multiple />
+      </label>
+      <label className="full-field">
+        {t.contact.fields.details}
+        <textarea name="details" rows="4" placeholder={t.contact.fields.detailsPlaceholder} />
+      </label>
+      <button type="submit">
+        {t.contact.submit}
+        <Send />
+      </button>
+      {submitted && <p className="form-status">{t.contact.status}</p>}
+    </form>
   );
 }
 
