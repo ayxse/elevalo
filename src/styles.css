@@ -289,11 +289,11 @@ svg {
   background: var(--blue);
   display: block;
   filter: drop-shadow(0 16px 26px rgba(20, 99, 255, 0.22));
-  height: 44px;
-  margin: 0 auto 20px;
-  mask: var(--symbol-url) left center / auto 44px no-repeat;
-  -webkit-mask: var(--symbol-url) left center / auto 44px no-repeat;
-  width: 54px;
+  height: 56px;
+  margin: 0 auto 22px;
+  mask: var(--symbol-url) left center / auto 56px no-repeat;
+  -webkit-mask: var(--symbol-url) left center / auto 56px no-repeat;
+  width: 68px;
 }
 
 .eyebrow {
