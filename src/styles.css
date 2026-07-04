@@ -435,6 +435,7 @@ p {
 }
 
 .hero-product-shell {
+  animation: hero-preview-enter 720ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(233, 237, 244, 0.88);
   border-radius: 30px;
@@ -451,6 +452,10 @@ p {
   border: 1px solid rgba(222, 228, 238, 0.92);
   border-radius: 22px;
   overflow: hidden;
+}
+
+.preview-browser-bar {
+  animation: hero-preview-bar-enter 520ms ease-out 420ms both;
 }
 
 .preview-status {
@@ -496,6 +501,7 @@ p {
 }
 
 .handoff-card {
+  animation: hero-preview-card-enter 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
   background: rgba(255, 255, 255, 0.76);
   display: flex;
   flex-direction: column;
@@ -507,6 +513,54 @@ p {
 
 .handoff-card + .handoff-card {
   border-left: 1px solid var(--line);
+}
+
+.request-card {
+  animation-delay: 520ms;
+}
+
+.preview-card {
+  animation-delay: 640ms;
+}
+
+.approval-card {
+  animation-delay: 760ms;
+}
+
+@keyframes hero-preview-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes hero-preview-bar-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-preview-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .handoff-label {
@@ -2422,6 +2476,12 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-product-shell,
+  .preview-browser-bar,
+  .handoff-card {
+    animation: none;
+  }
+
   .logo-track {
     animation: none;
     flex-wrap: wrap;
