@@ -160,7 +160,7 @@ const copy = {
     },
     contact: {
       label: "Solicitud de muestra",
-      title: "El brief completo vive en una página aparte.",
+      title: "Los detalles del proyecto completo viven en una página aparte.",
       text:
         "La página principal se queda ligera. Cuando estés listo, abre la solicitud y comparte el contexto que necesitamos para preparar una vista real de tu negocio.",
       cta: "Abrir solicitud",
@@ -225,10 +225,10 @@ const copy = {
       submit: "Solicitar vista previa",
       status:
         "Solicitud de muestra preparada. Conecta este formulario a correo, Tally o tu sistema de clientes cuando publiques el sitio."
-    },
+    },  
     requestPage: {
       back: "Volver a la página principal",
-      label: "Brief de proyecto",
+      label: "Detalles de proyecto",
       title: "Todo lo que necesitamos para crear tu primera vista.",
       text:
         "Completa esta solicitud con calma. Mientras más contexto compartas, más cerca queda la muestra de lo que tienes en mente.",
