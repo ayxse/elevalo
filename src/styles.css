@@ -1797,10 +1797,10 @@ p {
 .request-layout {
   align-items: start;
   display: grid;
-  gap: 36px;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1fr);
+  gap: 42px;
+  grid-template-columns: minmax(280px, 0.62fr) minmax(560px, 1.12fr);
   margin: 0 auto;
-  max-width: 1010px;
+  max-width: 1120px;
 }
 
 .request-intro {
@@ -2078,16 +2078,7 @@ p {
   padding: 14px;
 }
 
-@media (max-width: 920px) {
-  .nav-wrap {
-    max-width: calc(100% - 32px);
-    width: calc(100% - 32px);
-  }
-
-  .contact-section {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 1040px) {
   .request-layout {
     grid-template-columns: 1fr;
   }
@@ -2098,6 +2089,17 @@ p {
 
   .request-overview {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .nav-wrap {
+    max-width: calc(100% - 32px);
+    width: calc(100% - 32px);
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
   }
 
   .how-copy {

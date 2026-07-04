@@ -832,15 +832,27 @@ function LeadForm({ onSubmit, submitted, t }) {
       <div className="form-section-title">{t.contact.fields.contactSection}</div>
       <label>
         {t.contact.fields.businessName}
-        <input type="text" name="businessName" placeholder={t.contact.fields.businessPlaceholder} required />
+        <input
+          type="text"
+          name="businessName"
+          autoComplete="organization"
+          placeholder={t.contact.fields.businessPlaceholder}
+          required
+        />
       </label>
       <label>
         {t.contact.fields.clientEmail}
-        <input type="email" name="clientEmail" placeholder={t.contact.fields.clientEmailPlaceholder} required />
+        <input
+          type="email"
+          name="clientEmail"
+          autoComplete="email"
+          placeholder={t.contact.fields.clientEmailPlaceholder}
+          required
+        />
       </label>
       <label>
         {t.contact.fields.phone}
-        <input type="tel" name="phone" placeholder={t.contact.fields.phonePlaceholder} />
+        <input type="tel" name="phone" autoComplete="tel" placeholder={t.contact.fields.phonePlaceholder} />
       </label>
       <label className="checkbox-field">
         <input type="checkbox" name="useWhatsapp" />
@@ -854,6 +866,7 @@ function LeadForm({ onSubmit, submitted, t }) {
           type="text"
           name="businessType"
           list="business-type-options"
+          autoComplete="organization-title"
           placeholder={t.contact.fields.businessTypePlaceholder}
           required
         />
@@ -866,7 +879,7 @@ function LeadForm({ onSubmit, submitted, t }) {
       </label>
       <label>
         {t.contact.fields.location}
-        <input type="text" name="location" placeholder={t.contact.fields.locationPlaceholder} />
+        <input type="text" name="location" autoComplete="address-level2" placeholder={t.contact.fields.locationPlaceholder} />
       </label>
       <label>
         {t.contact.fields.goal}
@@ -895,7 +908,7 @@ function LeadForm({ onSubmit, submitted, t }) {
       </label>
       <label>
         {t.contact.fields.referenceSite}
-        <input type="url" name="referenceSite" placeholder={t.contact.fields.referenceSitePlaceholder} />
+        <input type="text" name="referenceSite" inputMode="url" placeholder={t.contact.fields.referenceSitePlaceholder} />
       </label>
       <label>
         {t.contact.fields.styleNotes}
