@@ -1993,6 +1993,11 @@ p {
   font-weight: 460;
 }
 
+.lead-form input:not([type="checkbox"]):not([type="file"]),
+.lead-form select {
+  height: 52px;
+}
+
 .field-hint {
   color: var(--muted);
   font-size: 0.82rem;
