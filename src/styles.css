@@ -2127,6 +2127,11 @@ p {
   min-height: 54px;
 }
 
+.lead-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .form-status {
   background: #eef3ff;
   border-radius: 14px;

@@ -35,6 +35,8 @@ const finalProducts = [
   }
 ];
 
+const requestEndpoint = import.meta.env.VITE_REQUEST_ENDPOINT;
+
 const copy = {
   es: {
     nav: {
@@ -224,7 +226,12 @@ const copy = {
       },
       submit: "Solicitar vista previa",
       status:
-        "Solicitud de muestra preparada. Conecta este formulario a correo, Tally o tu sistema de clientes cuando publiques el sitio."
+        "Solicitud enviada. Te contactaremos cuando revisemos los detalles.",
+      statusSending: "Enviando solicitud y archivos...",
+      statusError:
+        "No se pudo enviar la solicitud. Inténtalo de nuevo o escríbenos directamente.",
+      statusConfig:
+        "El formulario está listo, pero falta configurar el endpoint de Firebase."
     },  
     requestPage: {
       back: "Volver a la página principal",
@@ -256,7 +263,7 @@ const copy = {
       requestTitle: "Detalles del negocio",
       requestText: "Nombre, servicios, estilo, pueblo, fotos y objetivo principal.",
       previewLabel: "2. Muestra web",
-      previewTitle: "Una landing lista para revisar",
+      previewTitle: "Una pagina lista para revisar",
       approvalLabel: "3. Aprobación",
       approvalTitle: "Pagas solo si te gusta",
       approvalText: "Recibes la página para usarla, publicarla o conectarla."
@@ -449,7 +456,12 @@ const copy = {
       },
       submit: "Request preview",
       status:
-        "Sample request prepared. Connect this form to email, Tally, or your customer system when you publish the site."
+        "Request sent. We will contact you after reviewing the details.",
+      statusSending: "Sending request and files...",
+      statusError:
+        "The request could not be sent. Please try again or contact us directly.",
+      statusConfig:
+        "The form is ready, but the Firebase endpoint still needs to be configured."
     },
     requestPage: {
       back: "Back to main page",
@@ -505,7 +517,7 @@ const techLogos = [
 function App() {
   const [language, setLanguage] = useState("es");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
   const [activeStep, setActiveStep] = useState(null);
   const [route, setRoute] = useState(() => (typeof window === "undefined" ? "" : window.location.hash));
   const t = copy[language];
@@ -535,9 +547,32 @@ function App() {
     }
   }, [route]);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
+
+    if (!requestEndpoint) {
+      setSubmitStatus("config");
+      return;
+    }
+
+    setSubmitStatus("submitting");
+
+    try {
+      const response = await fetch(requestEndpoint, {
+        method: "POST",
+        body: new FormData(event.currentTarget)
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with ${response.status}`);
+      }
+
+      event.currentTarget.reset();
+      setSubmitStatus("success");
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    }
   }
 
   function handleLanguageToggle() {
@@ -554,7 +589,7 @@ function App() {
         onLanguageToggle={handleLanguageToggle}
         onSubmit={handleSubmit}
         setMenuOpen={setMenuOpen}
-        submitted={submitted}
+        submitStatus={submitStatus}
         t={t}
       />
     );
@@ -780,7 +815,7 @@ function SiteHeader({ menuOpen, nextLanguage, onLanguageToggle, setMenuOpen, t }
   );
 }
 
-function RequestPage({ language, menuOpen, nextLanguage, onLanguageToggle, onSubmit, setMenuOpen, submitted, t }) {
+function RequestPage({ language, menuOpen, nextLanguage, onLanguageToggle, onSubmit, setMenuOpen, submitStatus, t }) {
   return (
     <div className="site-shell request-shell" lang={language}>
       <SiteHeader
@@ -819,14 +854,22 @@ function RequestPage({ language, menuOpen, nextLanguage, onLanguageToggle, onSub
             </div>
           </div>
 
-          <LeadForm onSubmit={onSubmit} submitted={submitted} t={t} />
+          <LeadForm onSubmit={onSubmit} submitStatus={submitStatus} t={t} />
         </section>
       </main>
     </div>
   );
 }
 
-function LeadForm({ onSubmit, submitted, t }) {
+function LeadForm({ onSubmit, submitStatus, t }) {
+  const isSubmitting = submitStatus === "submitting";
+  const statusMessage = {
+    config: t.contact.statusConfig,
+    error: t.contact.statusError,
+    success: t.contact.status,
+    submitting: t.contact.statusSending
+  }[submitStatus];
+
   return (
     <form className="lead-form" encType="multipart/form-data" onSubmit={onSubmit}>
       <div className="form-section-title">{t.contact.fields.contactSection}</div>
@@ -929,11 +972,11 @@ function LeadForm({ onSubmit, submitted, t }) {
         {t.contact.fields.details}
         <textarea name="details" rows="4" placeholder={t.contact.fields.detailsPlaceholder} />
       </label>
-      <button type="submit">
-        {t.contact.submit}
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? t.contact.statusSending : t.contact.submit}
         <Send />
       </button>
-      {submitted && <p className="form-status">{t.contact.status}</p>}
+      {statusMessage && <p className={`form-status ${submitStatus}`}>{statusMessage}</p>}
     </form>
   );
 }
