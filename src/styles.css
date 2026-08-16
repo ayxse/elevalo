@@ -2382,11 +2382,12 @@ p {
 }
 
 .site-header .nav-cta {
-  background: #23252a;
-  border: 1px solid #23252a;
+  background: linear-gradient(180deg, #0878ff 0%, #055efe 100%);
+  border: 1px solid #0366ff;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.12) inset,
-    0 1px 2px rgba(23, 25, 31, 0.16);
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 1px 2px rgba(17, 31, 91, 0.2),
+    0 4px 10px rgba(20, 99, 255, 0.18);
   letter-spacing: 0;
   min-height: 36px;
   padding: 5px 14px;
@@ -2397,15 +2398,16 @@ p {
 }
 
 .site-header .nav-cta:hover {
-  background: #111216;
-  border-color: #111216;
+  background: linear-gradient(180deg, #096ff0 0%, #064fd6 100%);
+  border-color: #0754dc;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.1) inset,
-    0 2px 5px rgba(23, 25, 31, 0.18);
+    0 1px 0 rgba(255, 255, 255, 0.16) inset,
+    0 2px 4px rgba(17, 31, 91, 0.22),
+    0 6px 14px rgba(20, 99, 255, 0.22);
 }
 
 .site-header .menu-button {
-  background: #23252a;
+  background: var(--blue);
 }
 
 .language-panel {
