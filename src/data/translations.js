@@ -141,7 +141,7 @@ export const translations = {
       title: "Cuéntanos qué necesita tu negocio.",
       text:
         "Comparte el contexto de tu página, logo o piezas promocionales. Usaremos esa información para recomendarte un alcance claro y preparar la primera dirección visual.",
-      cta: "Contar mi proyecto",
+      cta: "Solicitar mi página",
       cardLabel: "Qué vas a compartir",
       cardTitle: "Página, identidad y materiales en un solo lugar.",
       cardText:
@@ -506,7 +506,7 @@ export const translations = {
       title: "Tell us what your business needs.",
       text:
         "Share the context for your website, logo, or promotional pieces. We will use it to recommend a clear scope and prepare the initial visual direction.",
-      cta: "Tell us about my project",
+      cta: "Request my website",
       cardLabel: "What you will share",
       cardTitle: "Website, identity, and materials in one place.",
       cardText:
