@@ -144,8 +144,8 @@ svg {
 .hero-actions,
 .primary-button,
 .secondary-button,
-.proof-strip,
-.proof-strip div,
+.connection-strip,
+.connection-strip div,
 .portal-head,
 .portal-head div,
 .setup-preview,
@@ -862,120 +862,111 @@ p {
   max-width: 620px;
 }
 
-.proof-strip {
-  align-items: center;
+.connection-strip {
   border-bottom: 1px dashed var(--line);
-  justify-content: center;
   margin: 0 auto;
   max-width: 1010px;
-  min-height: 86px;
-  padding: 12px 40px 18px;
+  padding: 14px 24px 24px;
 }
 
-.logo-marquee {
-  flex: none;
-  min-width: 0;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+.connection-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.logo-track {
-  animation: logo-scroll 28s linear infinite;
-  display: flex;
-  gap: 14px;
-  width: max-content;
-}
-
-.logo-marquee:hover .logo-track {
-  animation-play-state: paused;
-}
-
-.tech-logo {
+.connection-item {
+  --connection-bg: #eef3ff;
+  --connection-color: var(--blue);
   align-items: center;
-  --logo-bg: rgba(20, 99, 255, 0.1);
-  --logo-color: var(--blue);
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(222, 228, 238, 0.9);
-  border-radius: 18px;
-  box-shadow:
-    0 1px 1px rgba(38, 38, 43, 0.04),
-    0 10px 30px rgba(28, 37, 54, 0.055);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   display: flex;
-  font-family: var(--font-display);
-  gap: 11px;
-  font-size: 15px;
-  font-weight: 500;
-  justify-content: flex-start;
-  letter-spacing: -0.35px;
-  min-height: 56px;
-  min-width: 178px;
-  padding: 0 18px 0 12px;
-  white-space: nowrap;
+  gap: 9px;
+  min-height: 72px;
+  min-width: 0;
+  padding: 10px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
-.tech-logo.react {
-  --logo-bg: rgba(20, 158, 202, 0.11);
-  --logo-color: #149eca;
+.connection-item:hover {
+  border-color: var(--connection-color);
+  box-shadow: 0 8px 22px rgba(28, 37, 54, 0.08);
+  transform: translateY(-2px);
 }
 
-.tech-logo.next,
-.tech-logo.vercel {
-  --logo-bg: rgba(23, 25, 31, 0.08);
-  --logo-color: #17191f;
-}
-
-.tech-logo.svelte {
-  --logo-bg: rgba(255, 62, 0, 0.12);
-  --logo-color: #ff3e00;
-}
-
-.tech-logo.vite {
-  --logo-bg: rgba(143, 95, 255, 0.13);
-  --logo-color: #7c4dff;
-}
-
-.tech-logo.tailwind {
-  --logo-bg: rgba(6, 182, 212, 0.12);
-  --logo-color: #0891b2;
-}
-
-.tech-logo.google {
-  --logo-bg: rgba(66, 133, 244, 0.11);
-  --logo-color: #1a73e8;
-  min-width: 220px;
-}
-
-.tech-logo.tally {
-  --logo-bg: rgba(20, 99, 255, 0.1);
-  --logo-color: var(--blue);
-}
-
-.tech-mark {
-  background: var(--logo-bg);
-  border-radius: 13px;
-  color: var(--logo-color);
+.connection-icon {
+  align-items: center;
+  background: var(--connection-bg);
+  border-radius: 8px;
+  color: var(--connection-color);
+  display: flex;
   flex: 0 0 auto;
   height: 34px;
-  padding: 6px;
+  justify-content: center;
   width: 34px;
 }
 
-.tech-name {
-  color: #343b48;
-  line-height: 1;
+.connection-icon svg {
+  font-size: 1.05rem;
 }
 
-@keyframes logo-scroll {
-  from {
-    transform: translateX(0);
-  }
+.connection-copy {
+  min-width: 0;
+}
 
-  to {
-    transform: translateX(calc(-50% - 7px));
-  }
+.connection-copy strong,
+.connection-copy small {
+  display: block;
+}
+
+.connection-copy strong {
+  color: #343b48;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.connection-copy small {
+  color: #7b8391;
+  font-size: 0.65rem;
+  line-height: 1.25;
+  margin-top: 3px;
+}
+
+.connection-item.whatsapp {
+  --connection-bg: rgba(37, 211, 102, 0.11);
+  --connection-color: #128c4b;
+}
+
+.connection-item.maps {
+  --connection-bg: rgba(234, 67, 53, 0.1);
+  --connection-color: #d23d32;
+}
+
+.connection-item.instagram {
+  --connection-bg: rgba(214, 41, 118, 0.1);
+  --connection-color: #c72f76;
+}
+
+.connection-item.facebook {
+  --connection-bg: rgba(24, 119, 242, 0.1);
+  --connection-color: #1877f2;
+}
+
+.connection-item.email {
+  --connection-bg: rgba(111, 78, 255, 0.1);
+  --connection-color: #6747e8;
+}
+
+.connection-item.bookings {
+  --connection-bg: rgba(245, 158, 11, 0.12);
+  --connection-color: #c97900;
 }
 
 .how-section {
@@ -3056,6 +3047,10 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .connection-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
 }
 
 @media (max-width: 700px) {
@@ -3252,28 +3247,23 @@ p {
   }
 
   .logo-context {
-    padding: 18px 22px 4px;
+    padding: 18px 22px 8px;
   }
 
   .logo-context p {
     font-size: 0.9rem;
   }
 
-  .proof-strip {
-    min-height: 82px;
-    padding: 11px 22px 15px;
+  .connection-strip {
+    padding: 12px 22px 20px;
   }
 
-  .logo-marquee {
-    width: 100%;
+  .connection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .tech-logo {
-    min-width: 154px;
-  }
-
-  .tech-logo.google {
-    min-width: 198px;
+  .connection-item {
+    min-height: 68px;
   }
 
   .how-section,
@@ -3484,16 +3474,8 @@ p {
     animation: none;
   }
 
-  .logo-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .logo-marquee {
-    -webkit-mask-image: none;
-    mask-image: none;
+  .connection-item {
+    transition: none;
   }
 }
 

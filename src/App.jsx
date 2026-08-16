@@ -2,12 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  CalendarDays,
   CheckCircle2,
   ChevronDown,
   ExternalLink,
+  Facebook,
   Globe2,
+  Instagram,
+  Mail,
+  MapPin,
   Megaphone,
   Menu,
+  MessageCircle,
   Palette,
   Rocket,
   Send,
@@ -67,8 +73,16 @@ const copy = {
       primary: "Pedir vista gratis",
       secondary: "Cómo funciona"
     },
-    logoContext: "Tu página web primero. El logo y las piezas promocionales, cuando las necesites.",
-    proofLabel: "Tecnologías que puede usar Elevalo",
+    logoContext: "Tu página, conectada con lo que ya usas.",
+    proofLabel: "Conexiones disponibles para tu página",
+    connections: [
+      { name: "WhatsApp", text: "Mensajes directos" },
+      { name: "Google Maps", text: "Cómo llegar" },
+      { name: "Instagram", text: "Tu perfil social" },
+      { name: "Facebook", text: "Presencia local" },
+      { name: "Correo", text: "Contacto profesional" },
+      { name: "Reservas", text: "Citas y solicitudes" }
+    ],
     process: {
       label: "Cómo funciona.",
       title: "Tu página empieza con una muestra real.",
@@ -399,8 +413,16 @@ const copy = {
       primary: "Request free preview",
       secondary: "How it works"
     },
-    logoContext: "Your website first. Logo and promotional pieces when you need them.",
-    proofLabel: "Technologies Elevalo can use",
+    logoContext: "Your website, connected to the tools you already use.",
+    proofLabel: "Connections available for your website",
+    connections: [
+      { name: "WhatsApp", text: "Direct messages" },
+      { name: "Google Maps", text: "Directions" },
+      { name: "Instagram", text: "Your social profile" },
+      { name: "Facebook", text: "Local presence" },
+      { name: "Email", text: "Professional contact" },
+      { name: "Bookings", text: "Appointments and requests" }
+    ],
     process: {
       label: "How it works.",
       title: "Your website starts with a real preview.",
@@ -707,16 +729,8 @@ const copy = {
 
 const toolIcons = [Globe2, Palette, Megaphone, Rocket];
 
-const techLogos = [
-  { id: "react", name: "React" },
-  { id: "next", name: "Next.js" },
-  { id: "svelte", name: "Svelte" },
-  { id: "vite", name: "Vite" },
-  { id: "tailwind", name: "Tailwind CSS" },
-  { id: "vercel", name: "Vercel" },
-  { id: "google", name: "Google Business" },
-  { id: "tally", name: "Tally" }
-];
+const connectionIcons = [MessageCircle, MapPin, Instagram, Facebook, Mail, CalendarDays];
+const connectionIds = ["whatsapp", "maps", "instagram", "facebook", "email", "bookings"];
 
 const serviceRouteIds = ["servicios-web", "servicios-identidad", "servicios-promocionales", "servicios-lanzamiento"];
 
@@ -870,16 +884,20 @@ function HomePage({ activeStep, setActiveStep, t }) {
       <section className="logo-context" aria-label={t.logoContext}>
         <p>{t.logoContext}</p>
       </section>
-      <section className="proof-strip" aria-label={t.proofLabel}>
-        <div className="logo-marquee" aria-hidden="true">
-          <div className="logo-track">
-            {[...techLogos, ...techLogos].map((item, index) => (
-              <span className={`tech-logo ${item.id}`} key={`${item.id}-${index}`}>
-                <TechMark id={item.id} />
-                <span className="tech-name">{item.name}</span>
-              </span>
-            ))}
-          </div>
+      <section className="connection-strip" aria-label={t.proofLabel}>
+        <div className="connection-grid">
+          {t.connections.map((item, index) => {
+            const Icon = connectionIcons[index];
+            return (
+              <article className={`connection-item ${connectionIds[index]}`} key={item.name}>
+                <span className="connection-icon" aria-hidden="true"><Icon /></span>
+                <span className="connection-copy">
+                  <strong>{item.name}</strong>
+                  <small>{item.text}</small>
+                </span>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -1331,109 +1349,6 @@ function LeadForm({ onSubmit, submitStatus, t }) {
       </div>
       {statusMessage && <p className={`form-status ${submitStatus}`} aria-live="polite">{statusMessage}</p>}
     </form>
-  );
-}
-
-function TechMark({ id }) {
-  if (id === "react") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="16" cy="16" r="2.6" fill="currentColor" />
-        <ellipse cx="16" cy="16" fill="none" rx="11" ry="4.4" stroke="currentColor" strokeWidth="1.8" />
-        <ellipse
-          cx="16"
-          cy="16"
-          fill="none"
-          rx="11"
-          ry="4.4"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          transform="rotate(60 16 16)"
-        />
-        <ellipse
-          cx="16"
-          cy="16"
-          fill="none"
-          rx="11"
-          ry="4.4"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          transform="rotate(120 16 16)"
-        />
-      </svg>
-    );
-  }
-
-  if (id === "next") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="16" cy="16" r="13" fill="currentColor" opacity="0.08" />
-        <path d="M10 22V10h3.2l6.1 8.5V10H22v12h-3.1l-6.2-8.7V22H10Z" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (id === "svelte") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path
-          d="M21.8 8.4c-2.5-3.2-7.3-2.7-10 .2L8.6 12c-2.1 2.3-1.8 5.7.4 7.5a6.1 6.1 0 0 0 1.2 6.1c2.5 3 7 2.7 9.8-.1l3.4-3.5c2.2-2.3 1.9-5.8-.5-7.6a6 6 0 0 0-1.1-6Z"
-          fill="currentColor"
-          opacity="0.16"
-        />
-        <path
-          d="M11.3 18.5c1.4 1.2 3.4 1.1 4.8-.2l2.3-2.1c.7-.7 1.9-.7 2.6 0 .7.7.7 1.8 0 2.5l-3.4 3.2c-1.6 1.5-4.2 1.6-5.8.1a3.9 3.9 0 0 1-.5-3.5Zm9.4-5c-1.4-1.1-3.4-1-4.8.2l-2.3 2.2c-.7.7-1.9.7-2.6 0-.7-.7-.7-1.8 0-2.5l3.4-3.2c1.6-1.5 4.2-1.6 5.8-.1.9.9 1.1 2.2.5 3.4Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  }
-
-  if (id === "vite") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M6 7.5 16 25 26 7.5H6Z" fill="currentColor" opacity="0.18" />
-        <path d="m17.5 6-7.2 10.8h5.2L14.4 26l7.4-12h-5.1L17.5 6Z" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (id === "tailwind") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path
-          d="M8 14.8c1.2-4 3.7-6 7.5-6 2.3 0 4 1 5.4 3 1 1.4 2.1 2 3.4 2 1.4 0 2.6-.7 3.7-2-1.2 4-3.7 6-7.5 6-2.3 0-4-1-5.4-3-1-1.4-2.1-2-3.4-2-1.4 0-2.6.7-3.7 2Zm-4 6c1.2-4 3.7-6 7.5-6 2.3 0 4 1 5.4 3 1 1.4 2.1 2 3.4 2 1.4 0 2.6-.7 3.7-2-1.2 4-3.7 6-7.5 6-2.3 0-4-1-5.4-3-1-1.4-2.1-2-3.4-2-1.4 0-2.6.7-3.7 2Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  }
-
-  if (id === "vercel") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 6 28 26H4L16 6Z" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (id === "google") {
-    return (
-      <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="16" cy="16" r="13" fill="currentColor" opacity="0.1" />
-        <path
-          d="M23.6 16.2c0-.7-.1-1.3-.2-1.9H16v3.5h4.2a3.7 3.7 0 0 1-1.6 2.4v2h2.7c1.5-1.4 2.3-3.5 2.3-6Zm-7.6 7.6c2.2 0 4-.7 5.3-1.9l-2.7-2a5 5 0 0 1-7.5-2.6H8.3v2.1A8 8 0 0 0 16 23.8Zm-4.9-6.5a5 5 0 0 1 0-2.7v-2.1H8.3a8 8 0 0 0 0 6.9l2.8-2.1Zm4.9-5.9c1.2 0 2.3.4 3.2 1.2l2.4-2.4A8 8 0 0 0 8.3 12.5l2.8 2.1a5 5 0 0 1 4.9-3.2Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  }
-
-  return (
-    <svg className="tech-mark" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="7" y="6" width="18" height="20" rx="5" fill="currentColor" opacity="0.12" />
-      <path d="M10 10h12v3H10v-3Zm0 5h12v3H10v-3Zm0 5h7v3h-7v-3Z" fill="currentColor" />
-    </svg>
   );
 }
 
