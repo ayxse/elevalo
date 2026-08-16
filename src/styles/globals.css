@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "ABC Diatype";
+  src: url("../assets/fonts/ABCDiatype-Regular-Trial.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ABC Diatype";
+  src: url("../assets/fonts/ABCDiatype-Medium-Trial.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter var";
+  src: url("../assets/fonts/Inter-roman-latin-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter var";
+  src: url("../assets/fonts/Inter-roman-latin-ext-var.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --blue: #1463ff;
+  --blue-dark: #0c47c8;
+  --ink: #17191f;
+  --muted: #69707d;
+  --line: #e2e6ed;
+  --soft: #f7f9fc;
+  --grid: rgba(20, 99, 255, 0.12);
+  --white: #ffffff;
+  --shadow: 0 24px 70px rgba(28, 37, 54, 0.12);
+  --font-body: "Inter var", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "ABC Diatype", "Inter var", ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink);
+  font-family: var(--font-body);
+  background: var(--white);
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(20, 99, 255, 0.3);
+  outline-offset: 3px;
+}
+
+svg {
+  height: 1em;
+  width: 1em;
+}
+
+#producto,
+#paquetes,
+#proceso,
+#contacto {
+  scroll-margin-top: 110px;
+}
+
+.site-shell {
+  background:
+    linear-gradient(90deg, transparent 0, transparent calc(50% - 505px), rgba(20, 99, 255, 0.16) calc(50% - 505px), rgba(20, 99, 255, 0.16) calc(50% - 504px), transparent calc(50% - 504px), transparent calc(50% + 504px), rgba(20, 99, 255, 0.16) calc(50% + 504px), rgba(20, 99, 255, 0.16) calc(50% + 505px), transparent calc(50% + 505px)),
+    var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.nav-wrap {
+  align-items: center;
+  background: rgba(247, 247, 248, 0.9);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 1px 0 rgba(38, 38, 43, 0.1),
+    0 0 0 1px rgba(38, 38, 43, 0.04),
+    0 2px 12px -4px rgba(38, 38, 43, 0.16);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: auto 1fr auto;
+  font-family: var(--font-display);
+  left: 50%;
+  margin: 0;
+  max-width: 650px;
+  min-height: 48px;
+  padding: 6px 8px 6px 20px;
+  position: fixed;
+  right: auto;
+  top: 26px;
+  transform: translateX(-50%);
+  width: min(calc(100% - 32px), 650px);
+  z-index: 20;
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.brand-mark,
+.nav-links,
+.nav-links a,
+.nav-actions,
+.nav-cta,
+.menu-button,
+.eyebrow,
+.hero-actions,
+.primary-button,
+.secondary-button,
+.connection-strip,
+.connection-strip div,
+.portal-head,
+.portal-head div,
+.setup-preview,
+.phone-shell,
+.google-box,
+.message-box,
+.pricing-card li,
+.lead-form button {
+  align-items: center;
+  display: flex;
+}
+
+.brand {
+  gap: 10px;
+  font-size: 0;
+  min-width: 88px;
+}
+
+.brand-logo {
+  display: block;
+  height: auto;
+  max-width: 88px;
+  object-fit: contain;
+  width: 88px;
+}
+
+.brand-mark {
+  background: rgba(20, 99, 255, 0.11);
+  border-radius: 11px;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(2, 8px);
+  height: 34px;
+  justify-content: center;
+  padding: 8px;
+  width: 34px;
+}
+
+.brand-mark span {
+  background: var(--blue);
+  border-radius: 5px;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.brand > span:last-child {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.93rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  gap: 22px;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: #424957;
+  font-family: var(--font-display);
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.33px;
+  line-height: 24px;
+}
+
+.nav-links svg {
+  font-size: 0.8rem;
+}
+
+.nav-actions {
+  gap: 10px;
+}
+
+.language-toggle {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(222, 228, 238, 0.92);
+  border-radius: 10px;
+  color: #424957;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 650;
+  height: 36px;
+  justify-content: center;
+  letter-spacing: -0.2px;
+  min-width: 42px;
+  padding: 0 10px;
+}
+
+.language-toggle:hover {
+  border-color: rgba(20, 99, 255, 0.2);
+  color: var(--blue);
+}
+
+.sign-in {
+  color: #252b36;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.33px;
+  line-height: 24px;
+}
+
+.nav-cta {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, #07f 0%, #055efe 100%);
+  border-radius: 10px;
+  box-shadow:
+    0 1px 0.5px 0 rgba(255, 255, 255, 0.13) inset,
+    0 1px 1px 0 rgba(17, 31, 91, 0.2),
+    0 2px 4px -2px rgba(17, 31, 91, 0.4),
+    0 1px 5px -2px rgba(17, 31, 91, 0.4),
+    0 0 0 1px #0366ff;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: -0.33px;
+  line-height: 24px;
+  min-height: 36px;
+  padding: 6px 12px;
+}
+
+.menu-button {
+  background: var(--blue);
+  border: 0;
+  border-radius: 14px;
+  color: white;
+  display: none;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
