@@ -876,8 +876,8 @@ p {
 }
 
 .connection-item {
-  --connection-bg: #eef3ff;
-  --connection-color: var(--blue);
+  --brand-bg: #eef3ff;
+  --brand-color: var(--blue);
   align-items: center;
   background: white;
   border: 1px solid var(--line);
@@ -894,21 +894,29 @@ p {
 }
 
 .connection-item:hover {
-  border-color: var(--connection-color);
-  box-shadow: 0 8px 22px rgba(28, 37, 54, 0.08);
+  border-color: rgba(20, 99, 255, 0.28);
+  box-shadow: 0 8px 22px rgba(20, 99, 255, 0.09);
   transform: translateY(-2px);
 }
 
 .connection-icon {
   align-items: center;
-  background: var(--connection-bg);
+  background: #eef3ff;
   border-radius: 8px;
-  color: var(--connection-color);
+  color: var(--blue);
   display: flex;
   flex: 0 0 auto;
   height: 34px;
   justify-content: center;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
   width: 34px;
+}
+
+.connection-item:hover .connection-icon {
+  background: var(--brand-bg);
+  color: var(--brand-color);
 }
 
 .connection-icon svg {
@@ -940,33 +948,33 @@ p {
 }
 
 .connection-item.whatsapp {
-  --connection-bg: rgba(37, 211, 102, 0.11);
-  --connection-color: #128c4b;
+  --brand-bg: rgba(37, 211, 102, 0.11);
+  --brand-color: #128c4b;
 }
 
 .connection-item.maps {
-  --connection-bg: rgba(234, 67, 53, 0.1);
-  --connection-color: #d23d32;
+  --brand-bg: rgba(234, 67, 53, 0.1);
+  --brand-color: #d23d32;
 }
 
 .connection-item.instagram {
-  --connection-bg: rgba(214, 41, 118, 0.1);
-  --connection-color: #c72f76;
+  --brand-bg: rgba(214, 41, 118, 0.1);
+  --brand-color: #c72f76;
 }
 
 .connection-item.facebook {
-  --connection-bg: rgba(24, 119, 242, 0.1);
-  --connection-color: #1877f2;
+  --brand-bg: rgba(24, 119, 242, 0.1);
+  --brand-color: #1877f2;
 }
 
 .connection-item.email {
-  --connection-bg: rgba(111, 78, 255, 0.1);
-  --connection-color: #6747e8;
+  --brand-bg: rgba(111, 78, 255, 0.1);
+  --brand-color: #6747e8;
 }
 
 .connection-item.bookings {
-  --connection-bg: rgba(245, 158, 11, 0.12);
-  --connection-color: #c97900;
+  --brand-bg: rgba(245, 158, 11, 0.12);
+  --brand-color: #c97900;
 }
 
 .how-section {
