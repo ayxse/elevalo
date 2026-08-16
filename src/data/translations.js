@@ -218,25 +218,51 @@ export const translations = {
       back: "Atrás",
       optional: "Opcional",
       uploadAction: "Selecciona archivos",
+      uploadImagesAction: "Añade fotos del negocio",
+      uploadMoreImages: "Añadir más fotos",
+      takePhoto: "Tomar foto",
+      chooseGallery: "Elegir varias",
       uploadLogoHelp: "PNG, JPG, SVG o PDF",
-      uploadImagesHelp: "PNG o JPG · puedes elegir varias",
+      uploadImagesHelp: "Puedes repetir estas opciones; las fotos anteriores no se reemplazan.",
       selectedFile: "Seleccionado",
       selectedFiles: "archivos seleccionados",
+      selectedImages: "Fotos seleccionadas",
+      removeFile: "Quitar",
       submit: "Enviar mi proyecto",
       status:
         "Solicitud enviada. Te contactaremos cuando revisemos los detalles.",
-      statusSending: "Enviando solicitud y archivos...",
+      statusSending: "Subiendo tu solicitud y fotos. No cierres esta pantalla...",
+      statusSendingShort: "Enviando...",
       statusError:
         "No se pudo enviar la solicitud. Inténtalo de nuevo o escríbenos directamente.",
       statusConfig:
-        "El formulario está listo, pero falta configurar el endpoint de Firebase."
+        "El formulario todavía no está conectado. Escríbenos directamente mientras terminamos la configuración.",
+      confirmation: {
+        label: "Solicitud enviada",
+        title: "Recibimos tu proyecto.",
+        text: "Tus respuestas y archivos llegaron correctamente. Ahora revisaremos el material para entender la mejor dirección para tu negocio.",
+        nextLabel: "Qué ocurre ahora",
+        steps: [
+          "Revisamos los detalles, referencias y archivos que compartiste.",
+          "Te contactamos por email o WhatsApp para confirmar el alcance.",
+          "Preparamos la primera dirección visual para que puedas evaluarla."
+        ],
+        home: "Volver al inicio",
+        another: "Enviar otra solicitud"
+      },
+      loading: {
+        label: "Preparando tu solicitud",
+        title: "Enviando tus detalles",
+        text: "Estamos subiendo la información y los archivos de tu proyecto. Mantén esta pantalla abierta hasta ver la confirmación.",
+        note: "Las fotos pueden tardar un poco más en conexiones móviles."
+      }
     },  
     requestPage: {
       back: "Volver a la página principal",
       label: "Detalles del proyecto",
-      title: "Todo lo que necesitamos para entender tu proyecto.",
+      title: "Cuéntanos sobre tu proyecto.",
       text:
-        "Cuéntanos qué necesita el negocio y comparte el material disponible. Con ese contexto podemos recomendar el alcance y preparar una dirección visual más cercana a lo que tienes en mente.",
+        "Comparte lo esencial del negocio y cualquier material disponible. Con ese contexto podremos recomendar el alcance correcto.",
       overview: [
         {
           title: "Contacto",
@@ -557,25 +583,51 @@ export const translations = {
       back: "Back",
       optional: "Optional",
       uploadAction: "Choose files",
+      uploadImagesAction: "Add business photos",
+      uploadMoreImages: "Add more photos",
+      takePhoto: "Take a photo",
+      chooseGallery: "Choose several",
       uploadLogoHelp: "PNG, JPG, SVG, or PDF",
-      uploadImagesHelp: "PNG or JPG · select more than one",
+      uploadImagesHelp: "You can use these options again; previous photos will stay selected.",
       selectedFile: "Selected",
       selectedFiles: "files selected",
+      selectedImages: "Selected photos",
+      removeFile: "Remove",
       submit: "Send my project",
       status:
         "Request sent. We will contact you after reviewing the details.",
-      statusSending: "Sending request and files...",
+      statusSending: "Uploading your request and photos. Keep this screen open...",
+      statusSendingShort: "Sending...",
       statusError:
         "The request could not be sent. Please try again or contact us directly.",
       statusConfig:
-        "The form is ready, but the Firebase endpoint still needs to be configured."
+        "The form is not connected yet. Please contact us directly while we finish the setup.",
+      confirmation: {
+        label: "Request sent",
+        title: "We received your project.",
+        text: "Your answers and files arrived successfully. We will now review everything to understand the right direction for your business.",
+        nextLabel: "What happens next",
+        steps: [
+          "We review the details, references, and files you shared.",
+          "We contact you by email or WhatsApp to confirm the scope.",
+          "We prepare the first visual direction for you to evaluate."
+        ],
+        home: "Back to home",
+        another: "Send another request"
+      },
+      loading: {
+        label: "Preparing your request",
+        title: "Sending your details",
+        text: "We are uploading your project information and files. Keep this screen open until you see the confirmation.",
+        note: "Photos may take a little longer on mobile connections."
+      }
     },
     requestPage: {
       back: "Back to main page",
       label: "Project brief",
-      title: "Everything we need to understand your project.",
+      title: "Tell us about your project.",
       text:
-        "Tell us what the business needs and share any available materials. That context helps us recommend the right scope and prepare a visual direction closer to what you have in mind.",
+        "Share the essentials about the business and any available materials so we can recommend the right scope.",
       overview: [
         {
           title: "Contact",

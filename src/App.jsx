@@ -52,7 +52,7 @@ export default function App() {
     });
   }, [route]);
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event, files) {
     event.preventDefault();
 
     if (!isProjectRequestConfigured()) {
@@ -64,7 +64,7 @@ export default function App() {
     setSubmitStatus("submitting");
 
     try {
-      await createProjectRequest(form);
+      await createProjectRequest(form, files);
       form.reset();
       setSubmitStatus("success");
     } catch (error) {
@@ -76,7 +76,7 @@ export default function App() {
   let content;
   switch (page) {
     case "request":
-      content = <RequestPage onSubmit={handleSubmit} submitStatus={submitStatus} t={t} />;
+      content = <RequestPage onReset={() => setSubmitStatus("idle")} onSubmit={handleSubmit} submitStatus={submitStatus} t={t} />;
       break;
     case "services":
       content = <ServicesPage t={t} />;

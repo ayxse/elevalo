@@ -197,6 +197,7 @@
   border: 1px solid var(--line);
   border-radius: 14px;
   color: var(--ink);
+  font-size: 1rem;
   font-weight: 480;
   min-height: 52px;
   outline: none;

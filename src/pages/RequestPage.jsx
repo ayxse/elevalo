@@ -1,8 +1,10 @@
 import { ArrowLeft } from "lucide-react";
 import elevaloLogo from "../assets/elevalo-logo.png";
 import LeadForm from "../components/forms/LeadForm";
+import SubmissionConfirmation from "../components/forms/SubmissionConfirmation";
+import SubmissionLoading from "../components/forms/SubmissionLoading";
 
-export default function RequestPage({ onSubmit, submitStatus, t }) {
+export default function RequestPage({ onReset, onSubmit, submitStatus, t }) {
   return (
     <main className="request-page">
       <section className="request-layout">
@@ -18,8 +20,13 @@ export default function RequestPage({ onSubmit, submitStatus, t }) {
             {t.requestPage.overview.map((item, index) => <article key={item.title}><span>0{index + 1}</span><h2>{item.title}</h2><p>{item.text}</p></article>)}
           </div>
         </div>
-        <LeadForm onSubmit={onSubmit} submitStatus={submitStatus} t={t} />
+        {submitStatus === "success" ? (
+          <SubmissionConfirmation onReset={onReset} t={t} />
+        ) : (
+          <LeadForm onSubmit={onSubmit} submitStatus={submitStatus} t={t} />
+        )}
       </section>
+      {submitStatus === "submitting" && <SubmissionLoading t={t} />}
     </main>
   );
 }

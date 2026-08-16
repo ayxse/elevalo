@@ -307,7 +307,31 @@
   }
 
   .request-page {
-    padding: 118px 22px 72px;
+    padding: 98px 14px 56px;
+  }
+
+  .request-layout {
+    gap: 22px;
+  }
+
+  .request-intro .back-link {
+    margin-bottom: 20px;
+  }
+
+  .request-kicker {
+    margin-bottom: 10px;
+  }
+
+  .request-intro h1 {
+    font-size: 2.45rem;
+    letter-spacing: -0.055em;
+    line-height: 1;
+    margin: 8px 0 12px;
+  }
+
+  .request-intro > p {
+    font-size: 0.94rem;
+    line-height: 1.5;
   }
 
   .request-overview {
@@ -316,8 +340,60 @@
 
   .contact-brief-card,
   .lead-form {
-    border-radius: 24px;
-    padding: 24px;
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .form-progress {
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+  }
+
+  .form-step-panel legend {
+    font-size: 1.28rem;
+    margin-bottom: 18px;
+  }
+
+  .upload-dropzone {
+    min-height: 122px;
+    padding: 16px;
+  }
+
+  .multi-file-dropzone {
+    min-height: 176px;
+  }
+
+  .submission-confirmation {
+    border-radius: 20px;
+    min-height: 0;
+    padding: 26px 20px;
+  }
+
+  .submission-confirmation h2 {
+    font-size: 2.5rem;
+  }
+
+  .confirmation-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .confirmation-home,
+  .confirmation-reset {
+    width: 100%;
+  }
+
+  .submission-loading-backdrop {
+    padding: 14px;
+  }
+
+  .submission-loading {
+    border-radius: 20px;
+    padding: 38px 22px 24px;
+  }
+
+  .submission-loading h2 {
+    font-size: 2.45rem;
   }
 
   .progress-steps small {
@@ -331,6 +407,10 @@
   .form-step-panel .full-field,
   .form-step-panel .upload-note {
     grid-column: auto;
+  }
+
+  .selected-files ul {
+    grid-template-columns: 1fr;
   }
 
   .interior-hero {
@@ -475,7 +555,8 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-product-shell,
   .preview-browser-bar,
-  .handoff-card {
+  .handoff-card,
+  .submission-progress > span {
     animation: none;
   }
 
