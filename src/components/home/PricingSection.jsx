@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 
 export default function PricingSection({ t }) {
   return (
@@ -6,11 +6,20 @@ export default function PricingSection({ t }) {
       <div className="section-heading"><h2>{t.pricing.title}</h2><p>{t.pricing.text}</p></div>
       <div className="pricing-grid">
         {t.pricing.packages.map((item) => (
-          <article className="pricing-card" key={item.name}>
-            <h3>{item.name}</h3><strong>{item.price}</strong><p>{item.text}</p>
+          <article className={`pricing-card${item.featured ? " is-featured" : ""}`} key={item.name}>
+            <div className="pricing-card-heading">
+              <h3>{item.name}</h3>
+              <span>{item.badge}</span>
+            </div>
+            <strong>{item.price}</strong><p>{item.text}</p>
             <ul>{item.bullets.map((bullet) => <li key={bullet}><CheckCircle2 />{bullet}</li>)}</ul>
+            <a className="pricing-card-cta" href="#solicitud">{item.cta}<ArrowRight /></a>
           </article>
         ))}
+      </div>
+      <div className="pricing-assurance">
+        <ShieldCheck />
+        <div><strong>{t.pricing.assuranceTitle}</strong><p>{t.pricing.assuranceText}</p></div>
       </div>
       <div className="addon-panel">
         <div className="addon-panel-header">

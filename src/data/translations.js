@@ -82,6 +82,24 @@ export const translations = {
         }
       ]
     },
+    technology: {
+      aria: "Tecnología utilizada para desarrollar las páginas web",
+      label: "Cómo construimos",
+      title: "Diseñada para tu negocio. Desarrollada desde código.",
+      text: "No adaptamos tu negocio a una plantilla prediseñada. Cada proyecto se estructura desde cero y se desarrolla con herramientas modernas para que sea rápido, adaptable y fácil de mantener.",
+      proofs: [
+        "Estructura alrededor de tu contenido",
+        "Componentes propios, sin diseño genérico",
+        "Código preparado para mantener y ampliar"
+      ],
+      stackLabel: "Herramientas de desarrollo",
+      stack: [
+        { name: "React", text: "Interfaces construidas por componentes" },
+        { name: "JavaScript", text: "Interacciones y comportamiento de la página" },
+        { name: "CSS adaptable", text: "Diseño preparado para cada pantalla" },
+        { name: "Git + GitHub", text: "Versionado, revisión y publicación" }
+      ]
+    },
     showcase: {
       aria: "Proyecto web destacado",
       label: "Trabajo reciente",
@@ -103,22 +121,31 @@ export const translations = {
         {
           name: "Vista inicial",
           price: "$0",
+          badge: "Sin compromiso",
           text: "Preparamos una primera dirección visual con la información de tu negocio.",
-          bullets: ["Formulario del proyecto", "Dirección de estilo", "Muestra para evaluar"]
+          bullets: ["Formulario del proyecto", "Dirección de estilo", "Muestra para evaluar"],
+          cta: "Pedir vista gratis"
         },
         {
           name: "Página web",
           price: "Desde $350",
+          badge: "Más solicitado",
+          featured: true,
           text: "Una página profesional diseñada alrededor de la información y los objetivos de tu negocio.",
-          bullets: ["Diseño para celular y computadora", "Contenido principal organizado", "Contacto y publicación"]
+          bullets: ["Diseño para celular y computadora", "Contenido principal organizado", "Contacto y publicación"],
+          cta: "Comenzar mi página"
         },
         {
           name: "Página web avanzada",
           price: "Desde $650",
+          badge: "Alcance a medida",
           text: "Una página con más contenido, secciones o integraciones para un negocio que necesita mayor alcance.",
-          bullets: ["Todo lo incluido en la página", "Secciones adicionales", "Formulario o integración personalizada"]
+          bullets: ["Todo lo incluido en la página", "Secciones adicionales", "Formulario o integración personalizada"],
+          cta: "Cotizar mi proyecto"
         }
       ],
+      assuranceTitle: "Sabes el total antes de comenzar.",
+      assuranceText: "Confirmamos por escrito el alcance y el precio final. No hay cargos automáticos ni una mensualidad obligatoria.",
       addOnTitle: "Servicios opcionales",
       addOnQuote: "Añade solo lo que tu negocio necesite.",
       addOnText:
@@ -167,6 +194,14 @@ export const translations = {
         businessTypePlaceholder: "Ej. Pizzería, salón de uñas, contratista...",
         businessTypeHint: "Puedes escribir el tipo exacto aunque no salga en la lista.",
         select: "Selecciona una opción",
+        projectTier: "¿Con qué opción quieres comenzar?",
+        projectTierHint: "El precio final se confirma después de revisar el alcance.",
+        projectTierOptions: [
+          { name: "Vista inicial", price: "$0", text: "Una primera dirección visual para evaluar." },
+          { name: "Página web", price: "Desde $350", text: "Contenido principal, contacto y publicación." },
+          { name: "Página web avanzada", price: "Desde $650", text: "Más secciones o una integración personalizada." },
+          { name: "Necesito recomendación", price: "Por definir", text: "Revisen mis detalles y recomiéndenme la mejor opción." }
+        ],
         projectType: "¿Qué necesitas?",
         projectTypeOptions: [
           "Página web informativa",
@@ -222,8 +257,7 @@ export const translations = {
       uploadAction: "Selecciona archivos",
       uploadImagesAction: "Añade fotos del negocio",
       uploadMoreImages: "Añadir más fotos",
-      takePhoto: "Tomar foto",
-      chooseGallery: "Elegir varias",
+      chooseGallery: "Seleccionar imágenes",
       uploadLogoHelp: "PNG, JPG, SVG o PDF",
       uploadImagesHelp: "Puedes repetir estas opciones; las fotos anteriores no se reemplazan.",
       selectedFile: "Seleccionado",
@@ -243,12 +277,17 @@ export const translations = {
         label: "Solicitud enviada",
         title: "Recibimos tu proyecto.",
         text: "Tus respuestas y archivos llegaron correctamente. Ahora revisaremos el material para entender la mejor dirección para tu negocio.",
+        referenceLabel: "Número de solicitud",
+        referenceHelp: "Guárdalo para cualquier mensaje o archivo adicional.",
         nextLabel: "Qué ocurre ahora",
         steps: [
           "Revisamos los detalles, referencias y archivos que compartiste.",
           "Te contactamos por email o WhatsApp para confirmar el alcance.",
           "Preparamos la primera dirección visual para que puedas evaluarla."
         ],
+        missingDetails: "Si olvidaste algún detalle o archivo, puedes enviarlo a",
+        emailSubject: "Detalles adicionales para la solicitud",
+        emailBody: "Hola, quiero añadir información a la solicitud",
         home: "Volver al inicio",
         another: "Enviar otra solicitud"
       },
@@ -272,7 +311,7 @@ export const translations = {
         },
         {
           title: "Proyecto",
-          text: "Tipo de página, funciones y el objetivo principal que quieres resolver."
+          text: "Paquete, tipo de página, funciones y el objetivo principal que quieres resolver."
         },
         {
           title: "Materiales",
@@ -449,6 +488,24 @@ export const translations = {
         }
       ]
     },
+    technology: {
+      aria: "Technology used to build our websites",
+      label: "How we build",
+      title: "Designed for your business. Developed from code.",
+      text: "We do not force your business into a prebuilt template. Every project is structured from scratch and developed with modern tools so it stays fast, responsive, and easy to maintain.",
+      proofs: [
+        "Structure designed around your content",
+        "Custom components without a generic layout",
+        "Code prepared to maintain and expand"
+      ],
+      stackLabel: "Development tools",
+      stack: [
+        { name: "React", text: "Component-based interfaces" },
+        { name: "JavaScript", text: "Website interactions and behavior" },
+        { name: "Responsive CSS", text: "Layouts adapted to every screen" },
+        { name: "Git + GitHub", text: "Versioning, review, and publishing" }
+      ]
+    },
     showcase: {
       aria: "Featured website project",
       label: "Recent work",
@@ -470,22 +527,31 @@ export const translations = {
         {
           name: "Initial preview",
           price: "$0",
+          badge: "No commitment",
           text: "We prepare an initial visual direction using your business information.",
-          bullets: ["Project brief", "Style direction", "Preview to evaluate"]
+          bullets: ["Project brief", "Style direction", "Preview to evaluate"],
+          cta: "Request a free preview"
         },
         {
           name: "Website",
           price: "From $350",
+          badge: "Most requested",
+          featured: true,
           text: "A professional website designed around your business information and goals.",
-          bullets: ["Phone and desktop design", "Organized core content", "Contact and publishing"]
+          bullets: ["Phone and desktop design", "Organized core content", "Contact and publishing"],
+          cta: "Start my website"
         },
         {
           name: "Advanced website",
           price: "From $650",
+          badge: "Custom scope",
           text: "A website with more content, sections, or integrations for a business that needs a broader scope.",
-          bullets: ["Everything in the website", "Additional sections", "Custom form or integration"]
+          bullets: ["Everything in the website", "Additional sections", "Custom form or integration"],
+          cta: "Quote my project"
         }
       ],
+      assuranceTitle: "Know the total before work begins.",
+      assuranceText: "We confirm the scope and final price in writing. There are no automatic charges or required monthly fees.",
       addOnTitle: "Optional services",
       addOnQuote: "Add only what your business needs.",
       addOnText:
@@ -534,6 +600,14 @@ export const translations = {
         businessTypePlaceholder: "Ex. Pizza shop, nail salon, contractor...",
         businessTypeHint: "You can type the exact business type even if it is not listed.",
         select: "Select an option",
+        projectTier: "Which option would you like to start with?",
+        projectTierHint: "The final price is confirmed after we review the scope.",
+        projectTierOptions: [
+          { name: "Initial preview", price: "$0", text: "An initial visual direction to evaluate." },
+          { name: "Website", price: "From $350", text: "Core content, contact, and publishing." },
+          { name: "Advanced website", price: "From $650", text: "More sections or a custom integration." },
+          { name: "I need a recommendation", price: "To be defined", text: "Review my details and recommend the best option." }
+        ],
         projectType: "What do you need?",
         projectTypeOptions: [
           "Informational website",
@@ -589,8 +663,7 @@ export const translations = {
       uploadAction: "Choose files",
       uploadImagesAction: "Add business photos",
       uploadMoreImages: "Add more photos",
-      takePhoto: "Take a photo",
-      chooseGallery: "Choose several",
+      chooseGallery: "Select images",
       uploadLogoHelp: "PNG, JPG, SVG, or PDF",
       uploadImagesHelp: "You can use these options again; previous photos will stay selected.",
       selectedFile: "Selected",
@@ -610,12 +683,17 @@ export const translations = {
         label: "Request sent",
         title: "We received your project.",
         text: "Your answers and files arrived successfully. We will now review everything to understand the right direction for your business.",
+        referenceLabel: "Request number",
+        referenceHelp: "Keep it for any additional message or file.",
         nextLabel: "What happens next",
         steps: [
           "We review the details, references, and files you shared.",
           "We contact you by email or WhatsApp to confirm the scope.",
           "We prepare the first visual direction for you to evaluate."
         ],
+        missingDetails: "If you forgot a detail or file, you can send it to",
+        emailSubject: "Additional details for request",
+        emailBody: "Hello, I would like to add information to request",
         home: "Back to home",
         another: "Send another request"
       },
@@ -639,7 +717,7 @@ export const translations = {
         },
         {
           title: "Project",
-          text: "Website type, functionality, and the main goal you want to solve."
+          text: "Package, website type, functionality, and the main goal you want to solve."
         },
         {
           title: "Materials",

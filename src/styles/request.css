@@ -211,7 +211,7 @@
   font-weight: 460;
 }
 
-.lead-form input:not([type="checkbox"]):not([type="file"]),
+.lead-form input:not([type="checkbox"]):not([type="file"]):not([type="radio"]),
 .lead-form select {
   height: 52px;
 }

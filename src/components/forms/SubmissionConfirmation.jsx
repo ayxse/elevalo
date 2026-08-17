@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
-import { ArrowRight, Check, RotateCcw } from "lucide-react";
+import { ArrowRight, Check, Mail, RotateCcw } from "lucide-react";
 
-export default function SubmissionConfirmation({ onReset, t }) {
+export default function SubmissionConfirmation({ onReset, requestId, t }) {
   const titleRef = useRef(null);
+  const emailSubject = encodeURIComponent(`${t.contact.confirmation.emailSubject} ${requestId}`);
+  const emailBody = encodeURIComponent(`${t.contact.confirmation.emailBody} ${requestId}\n\n`);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -16,6 +18,12 @@ export default function SubmissionConfirmation({ onReset, t }) {
       <h2 id="submission-confirmation-title" ref={titleRef} tabIndex={-1}>{t.contact.confirmation.title}</h2>
       <p className="confirmation-copy">{t.contact.confirmation.text}</p>
 
+      <div className="confirmation-reference">
+        <span>{t.contact.confirmation.referenceLabel}</span>
+        <strong>{requestId}</strong>
+        <small>{t.contact.confirmation.referenceHelp}</small>
+      </div>
+
       <div className="confirmation-next">
         <strong>{t.contact.confirmation.nextLabel}</strong>
         <ol>
@@ -26,6 +34,11 @@ export default function SubmissionConfirmation({ onReset, t }) {
             </li>
           ))}
         </ol>
+      </div>
+
+      <div className="confirmation-contact">
+        <Mail aria-hidden="true" />
+        <p>{t.contact.confirmation.missingDetails} <a href={`mailto:contacto@elevalopr.com?subject=${emailSubject}&body=${emailBody}`}>contacto@elevalopr.com</a></p>
       </div>
 
       <div className="confirmation-actions">

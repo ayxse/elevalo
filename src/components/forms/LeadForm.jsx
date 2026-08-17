@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Send, UploadCloud } from "lucide-react";
+import { createRequestId } from "../../api/projectRequests";
 import MultiFileUpload from "./MultiFileUpload";
 
 export default function LeadForm({ onSubmit, submitStatus, t }) {
   const [step, setStep] = useState(0);
   const [logoName, setLogoName] = useState("");
   const [businessImages, setBusinessImages] = useState([]);
+  const [requestId] = useState(createRequestId);
   const formRef = useRef(null);
   const isSubmitting = submitStatus === "submitting";
   const statusMessage = {
@@ -41,7 +43,7 @@ export default function LeadForm({ onSubmit, submitStatus, t }) {
       advanceStep();
       return;
     }
-    onSubmit(event, { businessImages });
+    onSubmit(event, { businessImages, requestId });
   }
 
   return (
@@ -53,6 +55,7 @@ export default function LeadForm({ onSubmit, submitStatus, t }) {
         </label>
       </div>
       <input type="hidden" name="formName" value="Elevalo website project request" />
+      <input type="hidden" name="requestId" value={requestId} />
       <div className="form-progress" aria-label={`${t.contact.stepLabel} ${step + 1} ${t.contact.stepOf} 3`}>
         <div className="progress-copy"><span>{t.contact.stepLabel} {step + 1} {t.contact.stepOf} 3</span><strong>{t.contact.steps[step]}</strong></div>
         <div className="progress-track" aria-hidden="true"><span style={{ width: `${((step + 1) / 3) * 100}%` }} /></div>
@@ -64,7 +67,7 @@ export default function LeadForm({ onSubmit, submitStatus, t }) {
       <fieldset className="form-step-panel" data-form-step="0" hidden={step !== 0}>
         <legend>{t.contact.fields.contactSection}</legend>
         <label>{t.contact.fields.businessName}<input type="text" name="businessName" autoComplete="organization" placeholder={t.contact.fields.businessPlaceholder} required /></label>
-        <label>{t.contact.fields.clientEmail}<input type="email" name="clientEmail" autoComplete="email" placeholder={t.contact.fields.clientEmailPlaceholder} required /></label>
+        <label>{t.contact.fields.clientEmail}<input type="email" name="email" autoComplete="email" placeholder={t.contact.fields.clientEmailPlaceholder} required /></label>
         <label>{t.contact.fields.phone} <small>{t.contact.optional}</small><input type="tel" name="phone" autoComplete="tel" placeholder={t.contact.fields.phonePlaceholder} /></label>
         <label className="checkbox-field"><input type="checkbox" name="useWhatsapp" /><span>{t.contact.fields.useWhatsapp}</span></label>
         <label>{t.contact.fields.businessType}<input type="text" name="businessType" list="business-type-options" autoComplete="organization-title" placeholder={t.contact.fields.businessTypePlaceholder} required /><small className="field-hint">{t.contact.fields.businessTypeHint}</small></label>
@@ -74,6 +77,23 @@ export default function LeadForm({ onSubmit, submitStatus, t }) {
 
       <fieldset className="form-step-panel" data-form-step="1" hidden={step !== 1}>
         <legend>{t.contact.fields.contentSection}</legend>
+        <div className="tier-selector full-field">
+          <div className="tier-selector-heading">
+            <span id="project-tier-label">{t.contact.fields.projectTier}</span>
+            <small id="project-tier-hint">{t.contact.fields.projectTierHint}</small>
+          </div>
+          <div className="tier-options" role="radiogroup" aria-labelledby="project-tier-label" aria-describedby="project-tier-hint">
+            {t.contact.fields.projectTierOptions.map((option) => (
+              <label className="tier-option" key={option.name}>
+                <input type="radio" name="projectTier" value={`${option.name} - ${option.price}`} required />
+                <span className="tier-option-copy">
+                  <span><strong>{option.name}</strong><small>{option.price}</small></span>
+                  <em>{option.text}</em>
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
         <label>{t.contact.fields.projectType}<select name="projectType" defaultValue="" required><option value="" disabled>{t.contact.fields.select}</option>{t.contact.fields.projectTypeOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
         <label>{t.contact.fields.goal}<select name="goal" defaultValue="" required><option value="" disabled>{t.contact.fields.select}</option>{t.contact.fields.goalOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
         <label className="full-field">{t.contact.fields.services}<textarea name="services" rows="5" placeholder={t.contact.fields.servicesPlaceholder} required /></label>
@@ -92,7 +112,6 @@ export default function LeadForm({ onSubmit, submitStatus, t }) {
         <MultiFileUpload
           actionLabel={t.contact.uploadImagesAction}
           addMoreLabel={t.contact.uploadMoreImages}
-          cameraLabel={t.contact.takePhoto}
           galleryLabel={t.contact.chooseGallery}
           helpText={t.contact.uploadImagesHelp}
           label={t.contact.fields.images}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Camera, FileImage, Images, Plus, UploadCloud, X } from "lucide-react";
+import { FileImage, Images, Plus, UploadCloud, X } from "lucide-react";
 
 function fileKey(file) {
   return `${file.name}-${file.size}-${file.lastModified}`;
@@ -13,7 +13,6 @@ function formatFileSize(bytes) {
 export default function MultiFileUpload({
   actionLabel,
   addMoreLabel,
-  cameraLabel,
   galleryLabel,
   helpText,
   label,
@@ -58,19 +57,6 @@ export default function MultiFileUpload({
         {files.length ? <Plus /> : <UploadCloud />}
         <strong>{files.length ? addMoreLabel : actionLabel}</strong>
         <div className="upload-choice-row">
-          <label className="upload-choice">
-            <Camera />
-            <span>{cameraLabel}</span>
-            <input
-              type="file"
-              accept="image/*"
-              capture="environment"
-              onChange={(event) => {
-                addFiles(event.target.files);
-                event.target.value = "";
-              }}
-            />
-          </label>
           <label className="upload-choice">
             <Images />
             <span>{galleryLabel}</span>

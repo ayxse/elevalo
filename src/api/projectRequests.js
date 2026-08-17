@@ -1,5 +1,20 @@
 const requestEndpoint = import.meta.env.VITE_BASIN_FORM_ENDPOINT?.trim();
 
+export function createRequestId() {
+  const date = new Date();
+  const datePart = [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0")
+  ].join("");
+  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const randomValues = new Uint8Array(4);
+  window.crypto.getRandomValues(randomValues);
+  const randomPart = [...randomValues].map((value) => alphabet[value % alphabet.length]).join("");
+
+  return `ELV-${datePart}-${randomPart}`;
+}
+
 export function isProjectRequestConfigured() {
   return Boolean(requestEndpoint);
 }

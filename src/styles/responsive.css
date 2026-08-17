@@ -42,6 +42,11 @@
     grid-template-columns: 1fr;
   }
 
+  .technology-section {
+    gap: 36px;
+    grid-template-columns: 1fr;
+  }
+
   .how-copy {
     border-bottom: 0;
     border-right: 0;
@@ -267,6 +272,7 @@
 
   .how-section,
   .tools-section,
+  .technology-section,
   .pricing-section,
   .contact-section {
     padding-left: 22px;
@@ -298,6 +304,18 @@
   .tool-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card-heading {
+    align-items: flex-start;
+  }
+
+  .pricing-card-heading span {
+    margin-top: 1px;
+  }
+
+  .pricing-assurance {
+    align-items: start;
   }
 
   .request-page {
@@ -403,6 +421,14 @@
     grid-column: auto;
   }
 
+  .tier-options {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-form .tier-option {
+    min-height: 0;
+  }
+
   .selected-files ul {
     grid-template-columns: 1fr;
   }
@@ -481,6 +507,32 @@
   .tools-section {
     padding-bottom: 58px;
     padding-top: 58px;
+  }
+
+  .technology-section {
+    padding-bottom: 58px;
+    padding-top: 58px;
+  }
+
+  .technology-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-stack article {
+    align-items: center;
+    gap: 14px;
+    grid-template-columns: 40px 1fr;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .technology-stack article:nth-child(even) {
+    border-left: 0;
+  }
+
+  .technology-stack article + article,
+  .technology-stack article:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
   }
 
   .tool-card {

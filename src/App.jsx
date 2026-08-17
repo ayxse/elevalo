@@ -21,6 +21,7 @@ export default function App() {
   const [language, setLanguage] = useState(getInitialLanguage);
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submittedRequestId, setSubmittedRequestId] = useState("");
   const [activeStep, setActiveStep] = useState(null);
   const [route, setRoute] = useState(() => (typeof window === "undefined" ? "" : window.location.hash));
   const t = translations[language];
@@ -52,7 +53,7 @@ export default function App() {
     });
   }, [route]);
 
-  async function handleSubmit(event, files) {
+  async function handleSubmit(event, submission) {
     event.preventDefault();
 
     if (!isProjectRequestConfigured()) {
@@ -64,8 +65,9 @@ export default function App() {
     setSubmitStatus("submitting");
 
     try {
-      await createProjectRequest(form, files);
+      await createProjectRequest(form, submission);
       form.reset();
+      setSubmittedRequestId(submission.requestId);
       setSubmitStatus("success");
     } catch (error) {
       console.error(error);
@@ -76,7 +78,16 @@ export default function App() {
   let content;
   switch (page) {
     case "request":
-      content = <RequestPage onReset={() => setSubmitStatus("idle")} onSubmit={handleSubmit} submitStatus={submitStatus} t={t} />;
+      content = <RequestPage
+        onReset={() => {
+          setSubmitStatus("idle");
+          setSubmittedRequestId("");
+        }}
+        onSubmit={handleSubmit}
+        requestId={submittedRequestId}
+        submitStatus={submitStatus}
+        t={t}
+      />;
       break;
     case "services":
       content = <ServicesPage t={t} />;

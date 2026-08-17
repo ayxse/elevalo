@@ -4,7 +4,7 @@ import LeadForm from "../components/forms/LeadForm";
 import SubmissionConfirmation from "../components/forms/SubmissionConfirmation";
 import SubmissionLoading from "../components/forms/SubmissionLoading";
 
-export default function RequestPage({ onReset, onSubmit, submitStatus, t }) {
+export default function RequestPage({ onReset, onSubmit, requestId, submitStatus, t }) {
   return (
     <main className="request-page">
       <section className="request-layout">
@@ -21,7 +21,7 @@ export default function RequestPage({ onReset, onSubmit, submitStatus, t }) {
           </div>
         </div>
         {submitStatus === "success" ? (
-          <SubmissionConfirmation onReset={onReset} t={t} />
+          <SubmissionConfirmation onReset={onReset} requestId={requestId} t={t} />
         ) : (
           <LeadForm onSubmit={onSubmit} submitStatus={submitStatus} t={t} />
         )}

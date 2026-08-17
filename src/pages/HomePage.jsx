@@ -5,6 +5,7 @@ import FinalProductShowcase from "../components/home/FinalProductShowcase";
 import HeroProductPreview from "../components/home/HeroProductPreview";
 import PricingSection from "../components/home/PricingSection";
 import ProcessSection from "../components/home/ProcessSection";
+import TechnologySection from "../components/home/TechnologySection";
 import { featuredProject } from "../data/projects";
 import { serviceIcons } from "../data/ui";
 
@@ -35,6 +36,7 @@ export default function HomePage({ activeStep, setActiveStep, t }) {
         </div>
       </section>
 
+      <TechnologySection copy={t.technology} />
       <FinalProductShowcase product={featuredProject} copy={t.showcase} />
       <PricingSection t={t} />
 
