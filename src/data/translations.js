@@ -373,8 +373,8 @@ export const translations = {
       process: "How it works",
       cta: "Request my website",
       allServices: "View all services",
-      serviceMenuTitle: "Your visual presence starts on the web",
-      serviceMenuText: "Website, identity, and promotional pieces with one direction.",
+      serviceMenuTitle: "Your online presence starts with a strong website",
+      serviceMenuText: "Web design, mobile experience, integrations, and publishing in one project.",
       language: "English",
       spanish: "Español",
       english: "English",
@@ -420,30 +420,30 @@ export const translations = {
         {
           title: "You choose how to continue",
           text:
-            "If you like the direction, choose the website or a package with visual identity and we begin the final delivery."
+            "If you like the direction, we define the sections and integrations you need and begin the final development."
         }
       ]
     },
     tools: {
-      title: "Everything starts with a strong website.",
+      title: "Everything your website needs to work well.",
       text:
-        "Elevalo designs the website as the center of your digital presence. When needed, we add the logo and visual pieces that help the business present itself consistently.",
+        "We create a clear, fast online presence that helps customers find the right information and contact your business.",
       cards: [
         {
           title: "Website",
           text: "A clear experience that explains your services and turns visits into calls or messages."
         },
         {
-          title: "Logo and identity",
-          text: "A new or refreshed logo, colors, and typography that connect every part of the business."
+          title: "Responsive design",
+          text: "A website designed from the start to work well on phones, tablets, and computers."
         },
         {
-          title: "Promotional design",
-          text: "Graphics for ads, offers, social media, and launches that match the website."
+          title: "Contact and integrations",
+          text: "Forms, WhatsApp, maps, or bookings connected according to the needs of the business."
         },
         {
-          title: "Ready to launch",
-          text: "Domain, forms, and contact paths checked so you can publish with confidence."
+          title: "Ready to publish",
+          text: "Domain, links, content, and contact paths reviewed before launch."
         }
       ]
     },
@@ -476,10 +476,10 @@ export const translations = {
           bullets: ["Phone and desktop design", "Organized core content", "Contact and publishing"]
         },
         {
-          name: "Website + identity",
+          name: "Advanced website",
           price: "From $650",
-          text: "The website plus a simple visual identity so the business presents itself consistently.",
-          bullets: ["Everything in the website", "New or refreshed logo", "Colors, type, and social profile"]
+          text: "A website with more content, sections, or integrations for a business that needs a broader scope.",
+          bullets: ["Everything in the website", "Additional sections", "Custom form or integration"]
         }
       ],
       addOnTitle: "Optional services",
@@ -488,16 +488,16 @@ export const translations = {
         "These are not included in the base price. They are quoted separately according to the number of pieces or changes.",
       addOns: [
         {
-          title: "Logo and visual identity",
-          text: "A logo, colors, and typography that connect your website and business profiles."
+          title: "Additional sections",
+          text: "New pages for services, team members, FAQs, locations, or specialized content."
         },
         {
-          title: "Promotional design",
-          text: "Designs for offers, ads, events, launches, or social media content."
+          title: "Forms and integrations",
+          text: "Bookings, requests, maps, WhatsApp, or specific connections for the business workflow."
         },
         {
-          title: "Changes after publishing",
-          text: "Updates, new sections, or visual pieces whenever the business needs them."
+          title: "Maintenance and changes",
+          text: "Content updates, adjustments, and new functionality after publishing."
         }
       ]
     },
@@ -505,16 +505,16 @@ export const translations = {
       label: "Project request",
       title: "Tell us what your business needs.",
       text:
-        "Share the context for your website, logo, or promotional pieces. We will use it to recommend a clear scope and prepare the initial visual direction.",
+        "Share the context of your business and what you need to accomplish online. We will use it to recommend a clear web scope and prepare the initial visual direction.",
       cta: "Request my website",
       cardLabel: "What you will share",
-      cardTitle: "Website, identity, and materials in one place.",
+      cardTitle: "Everything we need for your website in one place.",
       cardText:
         "The request organizes what you already have and what you still need so we can define the right project.",
       bullets: [
         "Email, phone, and optional WhatsApp",
-        "Project type, main goal, and service area",
-        "Logo, images, references, and visual style"
+        "Website type, main goal, and service area",
+        "Current logo, images, references, and content"
       ],
       fields: {
         contactSection: "Contact",
@@ -532,11 +532,11 @@ export const translations = {
         select: "Select an option",
         projectType: "What do you need?",
         projectTypeOptions: [
-          "Website",
-          "Website + logo and identity",
-          "Website + promotional design",
-          "Complete visual package",
-          "Logo or graphic design only"
+          "Informational website",
+          "Website with a form or bookings",
+          "Redesign of an existing website",
+          "Website with several sections or services",
+          "I am not sure yet"
         ],
         businessOptions: [
           "Restaurant / cafe",
@@ -555,8 +555,8 @@ export const translations = {
           "Receive bookings or appointments",
           "Receive form requests",
           "Show services and prices",
-          "Create or refresh the visual identity",
-          "Promote an offer, event, or launch"
+          "Improve an existing website",
+          "Connect WhatsApp, maps, or bookings"
         ],
         vision: "Business vision",
         visionPlaceholder: "What you want the business to represent or where you want to take it...",
@@ -564,15 +564,15 @@ export const translations = {
         missionPlaceholder: "What you do, who you help, and what makes you different...",
         contentSection: "Project and direction",
         services: "Services, products, or main message",
-        servicesPlaceholder: "Tell us what the business offers. If you need a logo or promotion, explain what the piece should communicate...",
+        servicesPlaceholder: "Tell us what the business offers and what information a customer should find on the website...",
         referenceSite: "Website or brand you like as a reference",
         referenceSitePlaceholder: "Paste a link to a website, brand, or visual style you like...",
         styleNotes: "Style you want",
         styleNotesPlaceholder: "Modern, elegant, familiar, minimal, favorite colors, tone of voice...",
-        uploadSection: "Logo, photos, and materials",
-        logo: "Current business logo",
+        uploadSection: "Logo and photos for the website",
+        logo: "Logo we should use",
         images: "Photos or materials for the project",
-        uploadHint: "Upload the current logo, storefront photos, products, team photos, previous work, existing promotions, or any image that helps define the direction.",
+        uploadHint: "Upload the current logo, storefront photos, products, team photos, previous work, or any image that should appear on the website.",
         details: "Additional notes",
         detailsPlaceholder: "Anything important: social media, hours, links, instructions, or things you want to avoid..."
       },
@@ -635,19 +635,19 @@ export const translations = {
         },
         {
           title: "Project",
-          text: "Website, identity, promotion, and the main goal you want to solve."
+          text: "Website type, functionality, and the main goal you want to solve."
         },
         {
           title: "Materials",
-          text: "Logo, photos, services, references, and notes to build the visual direction."
+          text: "Current logo, photos, services, references, and notes needed to build the website."
         }
       ]
     },
     pages: {
       services: {
         label: "Services",
-        title: "We design the website. We build the visual presence around it.",
-        text: "Elevalo is a web studio for small businesses. The website is the primary service; identity and promotional pieces are available to launch everything with one consistent direction.",
+        title: "We design websites built to work for your business.",
+        text: "Elevalo is a web studio for small businesses. We organize the information, design the experience, and connect the tools needed to make your online presence clear and useful.",
         cards: [
           {
             title: "Website",
@@ -655,23 +655,23 @@ export const translations = {
             bullets: ["Organized content and services", "Designed for phones", "Contact, location, and links"]
           },
           {
-            title: "Logo and identity",
-            text: "A simple visual foundation that makes your website, profiles, and materials feel like one business.",
-            bullets: ["New or refreshed logo", "Colors and typography", "Versions for web and profiles"]
+            title: "Responsive design",
+            text: "An experience that adapts correctly to the screen each customer is using.",
+            bullets: ["Phone-first design", "Tablet and desktop", "Clear navigation at every size"]
           },
           {
-            title: "Promotional design",
-            text: "Visual pieces that carry the business identity into promotions, ads, and social media.",
-            bullets: ["Offer graphics", "Ads and social content", "Digital flyers and launches"]
+            title: "Contact and integrations",
+            text: "We connect the website to the actions that help customers take the next step.",
+            bullets: ["Forms and requests", "WhatsApp, maps, or bookings", "Links and direct contact"]
           },
           {
-            title: "Digital launch",
-            text: "The final details needed to publish the website correctly and share it with confidence.",
-            bullets: ["Domain and form", "Google-ready description", "Contact and link review"]
+            title: "Publishing and support",
+            text: "We prepare the final details needed to publish correctly and maintain the website as the business changes.",
+            bullets: ["Domain and setup", "Content and link review", "Post-launch changes available"]
           }
         ],
         closingTitle: "You do not need to become a huge brand to look professional.",
-        closingText: "We start with a clear website. Then we add identity or promotion only when it helps present the business better."
+        closingText: "We start with a clear website and add only the sections or integrations that help the business work better online."
       },
       projects: {
         label: "Projects",
@@ -696,7 +696,7 @@ export const translations = {
         principles: [
           { title: "No paying for a guess", text: "The first view lets you evaluate direction, content, and structure." },
           { title: "Clear scope", text: "You know what each stage includes and which extras are quoted separately." },
-          { title: "A consistent identity", text: "The website can grow with a logo, visual identity, and promotional pieces when you need them." }
+          { title: "A website that can grow", text: "You can add sections, forms, and integrations whenever the business needs them." }
         ]
       },
       faqs: [
@@ -704,7 +704,7 @@ export const translations = {
         { question: "Do you offer a portfolio rate?", answer: "During launch, we will accept up to three selected projects starting at $250. The scope must be simple and we must be able to feature the finished work in our portfolio." },
         { question: "How much material do I need?", answer: "You can begin even if you do not have a logo or professional photos yet. We will use what is available and explain what would improve the result." },
         { question: "Will the page work on mobile?", answer: "Yes. The design is prepared to work properly on phones, tablets, and computers." },
-        { question: "Can you also create my logo or ads?", answer: "Yes. We can create or refresh the logo and design promotional graphics. We design the creative pieces, but we do not manage advertising campaigns or social media accounts." }
+        { question: "What can you connect to my website?", answer: "We can integrate forms, maps, WhatsApp, bookings, and other web services according to the needs of the project." }
       ],
       footer: {
         text: "Clear websites for businesses ready to look better online.",
@@ -718,7 +718,7 @@ export const translations = {
       aria: "Service preview",
       path: "elevalo.digital/process",
       status: "Sample in review",
-      floaters: ["Services", "Style", "Contact", "Logo", "Promotions", "Photos"],
+      floaters: ["Services", "Style", "Contact", "Domain", "Bookings", "Photos"],
       requestLabel: "1. Request",
       requestTitle: "Business details",
       requestText: "Name, services, style, town, photos, and main goal.",
@@ -727,7 +727,7 @@ export const translations = {
       approvalLabel: "3. Approval",
       approvalTitle: "Choose how to continue",
       approvalPrice: "From $350",
-      approvalText: "Website, identity, or a more complete visual launch."
+      approvalText: "Website, sections, and integrations based on what the business needs."
     }
   }
 };
