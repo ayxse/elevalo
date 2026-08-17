@@ -10,15 +10,8 @@ import RequestPage from "./pages/RequestPage";
 import ServicesPage from "./pages/ServicesPage";
 import { getPageFromRoute, serviceRouteIds } from "./routing";
 
-function getInitialLanguage() {
-  if (typeof window === "undefined") return "es";
-  const savedLanguage = window.localStorage.getItem("elevalo-language");
-  if (savedLanguage === "es" || savedLanguage === "en") return savedLanguage;
-  return window.navigator.language?.toLowerCase().startsWith("en") ? "en" : "es";
-}
-
 export default function App() {
-  const [language, setLanguage] = useState(getInitialLanguage);
+  const [language, setLanguage] = useState("es");
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submittedRequestId, setSubmittedRequestId] = useState("");
@@ -39,7 +32,6 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.lang = language;
-    window.localStorage.setItem("elevalo-language", language);
   }, [language]);
 
   useEffect(() => {
