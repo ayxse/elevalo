@@ -1,8 +1,8 @@
 export const serviceRouteIds = [
   "servicios-web",
-  "servicios-identidad",
-  "servicios-promocionales",
-  "servicios-lanzamiento"
+  "servicios-responsive",
+  "servicios-integraciones",
+  "servicios-publicacion"
 ];
 
 export function getPageFromRoute(route) {

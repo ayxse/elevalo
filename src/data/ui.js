@@ -1,5 +1,6 @@
 import {
   CalendarDays,
+  Cable,
   Facebook,
   Globe2,
   Instagram,
@@ -7,11 +8,11 @@ import {
   MapPin,
   Megaphone,
   MessageCircle,
-  Palette,
-  Rocket
+  Rocket,
+  Smartphone
 } from "lucide-react";
 
-export const serviceIcons = [Globe2, Palette, Megaphone, Rocket];
+export const serviceIcons = [Globe2, Smartphone, Cable, Rocket];
 
 export const connectionItems = [
   { id: "whatsapp", Icon: MessageCircle },

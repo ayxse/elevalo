@@ -478,6 +478,28 @@
     border-left: 1px solid var(--line);
   }
 
+  .tools-section {
+    padding-bottom: 58px;
+    padding-top: 58px;
+  }
+
+  .tool-card {
+    display: grid;
+    gap: 6px 14px;
+    grid-template-columns: 30px 1fr;
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .tool-card svg {
+    grid-row: 1 / 3;
+    margin: 2px 0 0;
+  }
+
+  .tool-card h3 {
+    margin: 0;
+  }
+
   .field-row.two,
   .setup-preview,
   .addon-panel,
@@ -489,8 +511,32 @@
     grid-template-columns: 1fr;
   }
 
-  .addon-item {
-    border-left: 1px solid var(--line);
+  .addon-panel {
+    padding: 22px 20px;
+  }
+
+  .addon-panel-header {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .addon-item,
+  .addon-item:first-child,
+  .addon-item:last-child {
+    border-left: 0;
+    padding: 18px 0;
+  }
+
+  .addon-item + .addon-item {
+    border-top: 1px solid var(--line);
+  }
+
+  .addon-item:first-child {
+    padding-top: 0;
+  }
+
+  .addon-item:last-child {
+    padding-bottom: 0;
   }
 
   .final-product-section {

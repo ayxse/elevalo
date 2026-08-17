@@ -7,8 +7,8 @@ export const translations = {
       process: "Cómo funciona",
       cta: "Pedir mi página",
       allServices: "Ver todos los servicios",
-      serviceMenuTitle: "Tu presencia visual empieza en la web",
-      serviceMenuText: "Página web, identidad y piezas promocionales con una misma dirección.",
+      serviceMenuTitle: "Tu presencia online empieza con una buena página",
+      serviceMenuText: "Diseño web, experiencia móvil, integraciones y publicación en un solo proyecto.",
       language: "Español",
       spanish: "Español",
       english: "English",
@@ -55,30 +55,30 @@ export const translations = {
         {
           title: "Eliges cómo quieres continuar",
           text:
-            "Si te gusta la dirección, eliges la página web o un paquete con identidad visual y comenzamos la entrega final."
+            "Si te gusta la dirección, definimos las secciones e integraciones necesarias y comenzamos el desarrollo final."
         }
       ]
     },
     tools: {
-      title: "Todo empieza con una buena página web.",
+      title: "Todo lo que tu página necesita para trabajar bien.",
       text:
-        "Elevalo diseña la página como el centro de tu presencia digital. Cuando haga falta, añadimos el logo y las piezas visuales para presentar el negocio con consistencia.",
+        "Creamos una presencia online clara, rápida y preparada para que tus clientes encuentren la información correcta y puedan contactarte.",
       cards: [
         {
           title: "Página web",
           text: "Una experiencia clara para explicar tus servicios y convertir visitas en llamadas o mensajes."
         },
         {
-          title: "Logo e identidad",
-          text: "Logo nuevo o renovado, colores y tipografía para que todo el negocio se vea conectado."
+          title: "Diseño responsive",
+          text: "Una página preparada desde el inicio para verse y funcionar bien en celular, tableta y computadora."
         },
         {
-          title: "Diseños promocionales",
-          text: "Gráficas para anuncios, ofertas, redes y lanzamientos que siguen el estilo de tu página."
+          title: "Contacto e integraciones",
+          text: "Formularios, WhatsApp, mapas o reservas conectados según las necesidades del negocio."
         },
         {
-          title: "Listo para lanzar",
-          text: "Dominio, formularios y puntos de contacto revisados para publicar con confianza."
+          title: "Lista para publicar",
+          text: "Dominio, enlaces, contenido y puntos de contacto revisados antes del lanzamiento."
         }
       ]
     },
@@ -111,28 +111,28 @@ export const translations = {
           bullets: ["Diseño para celular y computadora", "Contenido principal organizado", "Contacto y publicación"]
         },
         {
-          name: "Página + identidad",
+          name: "Página web avanzada",
           price: "Desde $650",
-          text: "La página web junto a una identidad visual sencilla para presentar el negocio con consistencia.",
-          bullets: ["Todo lo incluido en la página", "Logo nuevo o renovado", "Colores, tipografía y perfil social"]
+          text: "Una página con más contenido, secciones o integraciones para un negocio que necesita mayor alcance.",
+          bullets: ["Todo lo incluido en la página", "Secciones adicionales", "Formulario o integración personalizada"]
         }
       ],
-      addOnTitle: "Para lanzar con una imagen completa",
-      addOnQuote: "La página puede ser el centro de una identidad que también funcione en redes, promociones y anuncios.",
+      addOnTitle: "Servicios opcionales",
+      addOnQuote: "Añade solo lo que tu negocio necesite.",
       addOnText:
-        "Estos servicios se cotizan según la cantidad de piezas, las revisiones y el alcance del proyecto.",
+        "No están incluidos en el precio base. Se cotizan por separado según la cantidad de piezas o cambios.",
       addOns: [
         {
-          title: "Logo e identidad visual",
-          text: "Logo principal, versiones útiles, paleta de colores, tipografía y guía visual breve."
+          title: "Secciones adicionales",
+          text: "Nuevas páginas para servicios, equipo, preguntas frecuentes, ubicaciones o contenido especializado."
         },
         {
-          title: "Gráficas promocionales",
-          text: "Piezas para ofertas, anuncios digitales, eventos, lanzamientos o contenido de redes."
+          title: "Formularios e integraciones",
+          text: "Reservas, solicitudes, mapas, WhatsApp o conexiones específicas para el flujo del negocio."
         },
         {
-          title: "Apoyo después del lanzamiento",
-          text: "Actualizaciones de la página, nuevas secciones y piezas visuales cuando el negocio cambie."
+          title: "Mantenimiento y cambios",
+          text: "Actualizaciones de contenido, ajustes y nuevas funciones después de publicar."
         }
       ]
     },
@@ -140,16 +140,16 @@ export const translations = {
       label: "Solicitud de proyecto",
       title: "Cuéntanos qué necesita tu negocio.",
       text:
-        "Comparte el contexto de tu página, logo o piezas promocionales. Usaremos esa información para recomendarte un alcance claro y preparar la primera dirección visual.",
+        "Comparte el contexto de tu negocio y lo que necesitas resolver en línea. Usaremos esa información para recomendarte un alcance web claro y preparar la primera dirección visual.",
       cta: "Solicitar mi página",
       cardLabel: "Qué vas a compartir",
-      cardTitle: "Página, identidad y materiales en un solo lugar.",
+      cardTitle: "Toda la información de tu página en un solo lugar.",
       cardText:
         "La solicitud organiza lo que ya tienes y lo que todavía necesitas para definir el proyecto correcto.",
       bullets: [
         "Email, teléfono y WhatsApp opcional",
-        "Tipo de proyecto, objetivo y área que atiende",
-        "Logo, imágenes, referencias y estilo visual"
+        "Tipo de página, objetivo y área que atiende",
+        "Logo actual, imágenes, referencias y contenido"
       ],
       fields: {
         contactSection: "Contacto",
@@ -167,11 +167,11 @@ export const translations = {
         select: "Selecciona una opción",
         projectType: "¿Qué necesitas?",
         projectTypeOptions: [
-          "Página web",
-          "Página web + logo e identidad",
-          "Página web + diseños promocionales",
-          "Paquete visual completo",
-          "Solo logo o diseño gráfico"
+          "Página web informativa",
+          "Página web con formulario o reservas",
+          "Rediseño de una página existente",
+          "Página con varias secciones o servicios",
+          "No estoy seguro todavía"
         ],
         businessOptions: [
           "Restaurante / café",
@@ -190,8 +190,8 @@ export const translations = {
           "Recibir reservas o citas",
           "Recibir solicitudes por formulario",
           "Mostrar servicios y precios",
-          "Crear o renovar la identidad visual",
-          "Promocionar una oferta, evento o lanzamiento"
+          "Mejorar una página web existente",
+          "Conectar WhatsApp, mapas o reservas"
         ],
         vision: "Visión del negocio",
         visionPlaceholder: "Qué quieres que el negocio represente o hacia dónde quieres llevarlo...",
@@ -199,15 +199,15 @@ export const translations = {
         missionPlaceholder: "Qué hacen, a quién ayudan y qué los hace diferentes...",
         contentSection: "Proyecto y dirección",
         services: "Servicios, productos o mensaje principal",
-        servicesPlaceholder: "Cuéntanos qué ofrece el negocio. Si necesitas un logo o una promoción, explica qué debe comunicar la pieza...",
+        servicesPlaceholder: "Cuéntanos qué ofrece el negocio y qué información debe encontrar un cliente en la página...",
         referenceSite: "Página o marca que te guste como referencia",
         referenceSitePlaceholder: "Pega un enlace de una página, marca o estilo visual que te guste...",
         styleNotes: "Estilo que quieres",
         styleNotesPlaceholder: "Moderno, elegante, familiar, minimal, colores favoritos, tono de voz...",
-        uploadSection: "Logo, fotos y materiales",
-        logo: "Logo actual del negocio",
+        uploadSection: "Logo y fotos para la página",
+        logo: "Logo que debemos usar",
         images: "Fotos o materiales para el proyecto",
-        uploadHint: "Puedes subir el logo actual, fotos del local, productos, equipo, trabajos anteriores, promociones existentes o cualquier imagen que ayude a definir la dirección.",
+        uploadHint: "Puedes subir el logo actual, fotos del local, productos, equipo, trabajos anteriores o cualquier imagen que deba aparecer en la página.",
         details: "Notas adicionales",
         detailsPlaceholder: "Cualquier detalle importante: redes sociales, horarios, links, instrucciones o cosas que quieres evitar..."
       },
@@ -270,19 +270,19 @@ export const translations = {
         },
         {
           title: "Proyecto",
-          text: "Página, identidad, promoción y el objetivo principal que quieres resolver."
+          text: "Tipo de página, funciones y el objetivo principal que quieres resolver."
         },
         {
           title: "Materiales",
-          text: "Logo, fotos, servicios, referencias y notas para construir la dirección visual."
+          text: "Logo actual, fotos, servicios, referencias y notas para construir la página."
         }
       ]
     },
     pages: {
       services: {
         label: "Servicios",
-        title: "Diseñamos la página. Construimos la imagen alrededor de ella.",
-        text: "Elevalo es un estudio web para pequeños negocios. La página es el servicio principal; la identidad y las piezas promocionales están disponibles para lanzar todo con una dirección consistente.",
+        title: "Diseñamos páginas web pensadas para trabajar por tu negocio.",
+        text: "Elevalo es un estudio web para pequeños negocios. Organizamos la información, diseñamos la experiencia y conectamos las herramientas necesarias para que tu presencia online sea clara y útil.",
         cards: [
           {
             title: "Página web",
@@ -290,23 +290,23 @@ export const translations = {
             bullets: ["Contenido y servicios organizados", "Experiencia adaptada a celular", "Contacto, ubicación y enlaces"]
           },
           {
-            title: "Logo e identidad",
-            text: "Una base visual sencilla para que tu página, perfiles y materiales se sientan parte del mismo negocio.",
-            bullets: ["Logo nuevo o renovación", "Colores y tipografía", "Versiones para web y perfiles"]
+            title: "Diseño responsive",
+            text: "Una experiencia que se adapta correctamente a la pantalla que esté usando cada cliente.",
+            bullets: ["Diseño pensado para celular", "Tableta y computadora", "Navegación clara en cada tamaño"]
           },
           {
-            title: "Diseños promocionales",
-            text: "Piezas visuales que llevan la identidad del negocio a promociones, anuncios y redes.",
-            bullets: ["Gráficas para ofertas", "Anuncios y contenido social", "Flyers digitales y lanzamientos"]
+            title: "Contacto e integraciones",
+            text: "Conectamos la página con las acciones que ayudan al cliente a dar el próximo paso.",
+            bullets: ["Formularios y solicitudes", "WhatsApp, mapas o reservas", "Enlaces y contacto directo"]
           },
           {
-            title: "Lanzamiento digital",
-            text: "Los detalles finales para que la página se publique bien y el negocio pueda compartirla con confianza.",
-            bullets: ["Dominio y formulario", "Descripción preparada para Google", "Revisión de enlaces y contacto"]
+            title: "Publicación y soporte",
+            text: "Preparamos los detalles finales para publicar correctamente y mantener la página cuando cambie el negocio.",
+            bullets: ["Dominio y configuración", "Revisión de contenido y enlaces", "Cambios posteriores disponibles"]
           }
         ],
         closingTitle: "No necesitas convertirte en una marca enorme para verte profesional.",
-        closingText: "Comenzamos con una página clara. Luego añadimos identidad o promoción solamente cuando ayuden a presentar mejor el negocio."
+        closingText: "Comenzamos con una página clara y añadimos únicamente las secciones o integraciones que ayuden al negocio a funcionar mejor en línea."
       },
       projects: {
         label: "Proyectos",
@@ -331,7 +331,7 @@ export const translations = {
         principles: [
           { title: "Sin pago por adivinar", text: "La primera vista te deja evaluar dirección, contenido y estructura." },
           { title: "Alcance claro", text: "Sabes qué incluye cada etapa y qué extras se cotizan aparte." },
-          { title: "Una imagen consistente", text: "La página puede crecer con logo, identidad y piezas promocionales cuando las necesites." }
+          { title: "Una página que puede crecer", text: "Puedes añadir secciones, formularios e integraciones cuando el negocio las necesite." }
         ]
       },
       faqs: [
@@ -339,7 +339,7 @@ export const translations = {
         { question: "¿Tienen tarifa de portafolio?", answer: "Durante el lanzamiento aceptaremos hasta tres proyectos seleccionados desde $250. La tarifa depende de que el alcance sea sencillo y de que podamos mostrar el resultado en nuestro portafolio." },
         { question: "¿Cuánto material necesito tener?", answer: "Puedes empezar aunque todavía no tengas logo o fotos profesionales. Usaremos lo disponible y te indicaremos qué ayudaría a mejorar el resultado." },
         { question: "¿La página se verá bien en celular?", answer: "Sí. El diseño se prepara para funcionar correctamente en celular, tableta y computadora." },
-        { question: "¿También pueden crear mi logo o anuncios?", answer: "Sí. Podemos crear o renovar el logo y diseñar piezas promocionales. Diseñamos las gráficas, pero no administramos campañas publicitarias ni redes sociales." }
+        { question: "¿Qué pueden conectar a mi página?", answer: "Podemos integrar formularios, mapas, WhatsApp, reservas y otros servicios web según las necesidades del proyecto." }
       ],
       footer: {
         text: "Páginas claras para negocios listos para verse mejor en línea.",
@@ -353,7 +353,7 @@ export const translations = {
       aria: "Vista previa del servicio",
       path: "elevalo.digital/proceso",
       status: "Muestra en revisión",
-      floaters: ["Servicios", "Estilo", "Contacto", "Logo", "Promoción", "Fotos"],
+      floaters: ["Servicios", "Estilo", "Contacto", "Dominio", "Reservas", "Fotos"],
       requestLabel: "1. Solicitud",
       requestTitle: "Detalles del negocio",
       requestText: "Nombre, servicios, estilo, pueblo, fotos y objetivo principal.",
@@ -362,7 +362,7 @@ export const translations = {
       approvalLabel: "3. Aprobación",
       approvalTitle: "Eliges cómo continuar",
       approvalPrice: "Desde $350",
-      approvalText: "Página web, identidad o un lanzamiento visual más completo."
+      approvalText: "Página web, secciones e integraciones según lo que necesite el negocio."
     }
   },
   en: {
@@ -482,22 +482,22 @@ export const translations = {
           bullets: ["Everything in the website", "New or refreshed logo", "Colors, type, and social profile"]
         }
       ],
-      addOnTitle: "Launch with a complete visual presence",
-      addOnQuote: "The website can become the center of an identity that also works across social media, promotions, and ads.",
+      addOnTitle: "Optional services",
+      addOnQuote: "Add only what your business needs.",
       addOnText:
-        "These services are quoted according to the number of pieces, revision rounds, and project scope.",
+        "These are not included in the base price. They are quoted separately according to the number of pieces or changes.",
       addOns: [
         {
           title: "Logo and visual identity",
-          text: "Primary logo, useful variations, color palette, typography, and a short visual guide."
+          text: "A logo, colors, and typography that connect your website and business profiles."
         },
         {
-          title: "Promotional graphics",
-          text: "Designs for offers, digital ads, events, launches, or social content."
+          title: "Promotional design",
+          text: "Designs for offers, ads, events, launches, or social media content."
         },
         {
-          title: "Post-launch support",
-          text: "Website updates, new sections, and visual pieces as the business changes."
+          title: "Changes after publishing",
+          text: "Updates, new sections, or visual pieces whenever the business needs them."
         }
       ]
     },

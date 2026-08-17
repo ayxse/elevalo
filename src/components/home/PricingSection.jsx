@@ -13,7 +13,10 @@ export default function PricingSection({ t }) {
         ))}
       </div>
       <div className="addon-panel">
-        <div><span>{t.pricing.addOnTitle}</span><strong>{t.pricing.addOnQuote}</strong><p>{t.pricing.addOnText}</p></div>
+        <div className="addon-panel-header">
+          <span>{t.pricing.addOnTitle}</span>
+          <div><strong>{t.pricing.addOnQuote}</strong><p>{t.pricing.addOnText}</p></div>
+        </div>
         <div className="addon-list">
           {t.pricing.addOns.map((item) => <article className="addon-item" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
         </div>
