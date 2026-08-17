@@ -545,37 +545,41 @@
 
   .recent-work-showcase {
     border-radius: 24px;
+    gap: 24px;
+    grid-template-columns: 1fr;
     margin: 0;
     min-height: 0;
+    padding: 24px;
   }
 
   .final-product-copy {
     gap: 0;
-    padding: 28px 24px 22px;
+    padding: 4px 2px 0;
   }
 
   .final-product-copy .section-label {
-    font-size: 1.65rem;
+    font-size: 0.72rem;
   }
 
-  .final-product-actions {
-    align-items: flex-start;
-    flex-direction: row;
+  .final-product-copy h2 {
+    margin-top: 14px;
   }
 
-  .recent-sites-marquee {
-    padding: 18px 0;
+  .final-product-copy p {
+    max-width: 520px;
   }
 
-  .recent-sites-group {
-    gap: 16px;
-    padding-right: 16px;
+  .project-browser {
+    border-radius: 16px;
   }
 
-  .recent-site-card {
-    border-radius: 18px;
-    flex-basis: 300px;
-    height: 164px;
+  .project-browser-controls {
+    gap: 10px;
+    grid-template-columns: minmax(76px, 1fr) auto;
+  }
+
+  .project-browser-progress {
+    display: none;
   }
 
   .landing-preview-card {
@@ -596,6 +600,7 @@
   .hero-product-shell,
   .preview-browser-bar,
   .handoff-card,
+  .project-browser-viewport img,
   .submission-progress > span {
     animation: none;
   }

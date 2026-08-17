@@ -83,16 +83,18 @@ export const translations = {
       ]
     },
     showcase: {
-      aria: "Producto final de muestra",
-      label: "Resultado listo para revisar",
-      title: "Una página real, no una maqueta genérica.",
-      textBefore: "Así presentamos el sabor, la historia y las ubicaciones de",
-      textAfter: "en una experiencia lista para compartir antes de aprobar.",
-      pill: "Proyecto de muestra",
+      aria: "Proyecto web destacado",
+      label: "Trabajo reciente",
+      title: "Una experiencia web hecha alrededor del negocio.",
+      text: "Organizamos su historia, productos y ubicaciones en una página clara, rápida y lista para compartir.",
       cta: "Ver página web",
-      marqueeLabel: "Capturas de",
+      status: "Sitio publicado",
       openLabel: "Abrir página web de",
-      imageAlt: "sección"
+      imageAlt: "sección",
+      navigationLabel: "Secciones del proyecto",
+      showLabel: "Mostrar sección",
+      previous: "Captura anterior",
+      next: "Siguiente captura"
     },
     pricing: {
       title: "Un punto de partida que respeta tu negocio.",
@@ -448,16 +450,18 @@ export const translations = {
       ]
     },
     showcase: {
-      aria: "Sample final product",
-      label: "Ready to review",
-      title: "A real page, not a generic mockup.",
-      textBefore: "This is how we present the flavor, story, and locations of",
-      textAfter: "in an experience ready to share before approval.",
-      pill: "Sample project",
+      aria: "Featured website project",
+      label: "Recent work",
+      title: "A web experience designed around the business.",
+      text: "We organized its story, products, and locations into a clear, fast website ready to share.",
       cta: "View website",
-      marqueeLabel: "Screenshots of",
+      status: "Live website",
       openLabel: "Open website for",
-      imageAlt: "section"
+      imageAlt: "section",
+      navigationLabel: "Project sections",
+      showLabel: "Show section",
+      previous: "Previous screenshot",
+      next: "Next screenshot"
     },
     pricing: {
       title: "A starting point that respects your business.",
