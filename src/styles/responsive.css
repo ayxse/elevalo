@@ -165,13 +165,7 @@
   }
 
   .hero-product {
-    padding: 0 14px 48px;
-  }
-
-  .hero-product::before {
-    bottom: 16px;
-    height: 180px;
-    width: 92vw;
+    padding: 0 14px 32px;
   }
 
   .hero-product-shell {

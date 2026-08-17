@@ -126,32 +126,12 @@ p {
 .hero-product {
   margin: 0 auto;
   max-width: 1010px;
-  padding: 0 24px 70px;
+  padding: 0 24px 38px;
   position: relative;
 }
 
 .hero-product::before {
-  background: linear-gradient(
-    92deg,
-    rgba(20, 99, 255, 0) 0%,
-    rgba(20, 99, 255, 0.14) 26%,
-    rgba(9, 205, 255, 0.24) 50%,
-    rgba(111, 95, 255, 0.1) 74%,
-    rgba(20, 99, 255, 0) 100%
-  );
-  background-size: 170% 100%;
-  border-radius: 999px;
-  bottom: 12px;
-  content: "";
-  filter: blur(30px);
-  height: 152px;
-  left: 50%;
-  opacity: 0.48;
-  pointer-events: none;
-  position: absolute;
-  transform: translateX(-50%);
-  width: min(680px, 62vw);
-  z-index: 0;
+  display: none;
 }
 
 .hero-product-shell {
@@ -160,7 +140,8 @@ p {
   border: 1px solid rgba(233, 237, 244, 0.88);
   border-radius: 30px;
   box-shadow:
-    0 28px 90px rgba(20, 99, 255, 0.14),
+    0 24px 64px rgba(28, 37, 54, 0.1),
+    0 8px 24px rgba(20, 99, 255, 0.055),
     0 1px 1px rgba(38, 38, 43, 0.06);
   padding: 10px;
   position: relative;
