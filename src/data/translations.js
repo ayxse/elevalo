@@ -392,8 +392,8 @@ export const translations = {
     },
     preview: {
       aria: "Vista previa del servicio",
-      path: "elevalo.digital/proceso",
-      status: "Muestra en revisión",
+      path: "elevalopr.com/tu-proyecto",
+      status: "3 pasos sencillos",
       floaters: ["Servicios", "Estilo", "Contacto", "Dominio", "Reservas", "Fotos"],
       requestLabel: "1. Solicitud",
       requestTitle: "Detalles del negocio",
@@ -798,8 +798,8 @@ export const translations = {
     },
     preview: {
       aria: "Service preview",
-      path: "elevalo.digital/process",
-      status: "Sample in review",
+      path: "elevalopr.com/your-project",
+      status: "3 simple steps",
       floaters: ["Services", "Style", "Contact", "Domain", "Bookings", "Photos"],
       requestLabel: "1. Request",
       requestTitle: "Business details",
