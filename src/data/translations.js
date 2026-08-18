@@ -69,7 +69,7 @@ export const translations = {
           text: "Una experiencia clara para explicar tus servicios y convertir visitas en llamadas o mensajes."
         },
         {
-          title: "Diseño responsive",
+          title: "Diseño responsivo",
           text: "Una página preparada desde el inicio para verse y funcionar bien en celular, tableta y computadora."
         },
         {
@@ -331,7 +331,7 @@ export const translations = {
             bullets: ["Contenido y servicios organizados", "Experiencia adaptada a celular", "Contacto, ubicación y enlaces"]
           },
           {
-            title: "Diseño responsive",
+            title: "Diseño responsivo",
             text: "Una experiencia que se adapta correctamente a la pantalla que esté usando cada cliente.",
             bullets: ["Diseño pensado para celular", "Tableta y computadora", "Navegación clara en cada tamaño"]
           },
