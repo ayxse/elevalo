@@ -49,6 +49,14 @@ export default function SiteHeader({ language, menuOpen, onLanguageSelect, page,
 
   return (
     <header className={scrolled ? "site-header scrolled" : "site-header"} ref={headerRef}>
+      <div className="announcement-bar">
+        <a href="#solicitud" onClick={closeNavigation}>
+          <span className="announcement-kicker">{t.announcement.kicker}</span>
+          <strong>{t.announcement.message}</strong>
+          <span className="announcement-detail">{t.announcement.detail}</span>
+          <ArrowRight aria-hidden="true" />
+        </a>
+      </div>
       <div className="nav-wrap">
         <a className="brand" href="#inicio" aria-label="Elevalo" onClick={closeNavigation}>
           <img className="brand-logo" src={elevaloLogo} alt="" aria-hidden="true" />

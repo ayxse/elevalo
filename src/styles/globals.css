@@ -31,6 +31,7 @@
 }
 
 :root {
+  --announcement-height: 38px;
   --blue: #1463ff;
   --blue-dark: #0c47c8;
   --ink: #17191f;
@@ -96,7 +97,7 @@ svg {
 #paquetes,
 #proceso,
 #contacto {
-  scroll-margin-top: 110px;
+  scroll-margin-top: calc(110px + var(--announcement-height));
 }
 
 .site-shell {
@@ -144,8 +145,6 @@ svg {
 .hero-actions,
 .primary-button,
 .secondary-button,
-.connection-strip,
-.connection-strip div,
 .portal-head,
 .portal-head div,
 .setup-preview,

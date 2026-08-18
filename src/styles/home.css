@@ -1,7 +1,7 @@
 .hero-section {
   margin: 0 auto;
   max-width: 1010px;
-  padding: 124px 24px 34px;
+  padding: calc(124px + var(--announcement-height)) 24px 34px;
   text-align: center;
 }
 
@@ -1178,6 +1178,33 @@ p {
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.58;
+  margin: 0;
+}
+
+.technology-professional {
+  align-items: flex-start;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  margin-top: 22px;
+  padding: 13px 14px;
+}
+
+.technology-professional svg {
+  color: var(--blue);
+  height: 18px;
+  margin-top: 1px;
+  width: 18px;
+}
+
+.technology-professional p {
+  color: #424957;
+  font-size: 0.8rem;
+  font-weight: 650;
+  line-height: 1.48;
   margin: 0;
 }
 

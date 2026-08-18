@@ -1,4 +1,4 @@
-import { Atom, Braces, CheckCircle2, GitBranch, PanelsTopLeft } from "lucide-react";
+import { Atom, BadgeCheck, Braces, CheckCircle2, GitBranch, PanelsTopLeft } from "lucide-react";
 
 const technologyIcons = [Atom, Braces, PanelsTopLeft, GitBranch];
 
@@ -9,6 +9,7 @@ export default function TechnologySection({ copy }) {
         <span className="technology-label">{copy.label}</span>
         <h2>{copy.title}</h2>
         <p>{copy.text}</p>
+        <div className="technology-professional"><BadgeCheck /><p>{copy.professional}</p></div>
         <ul>
           {copy.proofs.map((proof) => <li key={proof}><CheckCircle2 />{proof}</li>)}
         </ul>

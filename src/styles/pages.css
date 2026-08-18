@@ -7,7 +7,7 @@
   border-bottom: 1px solid var(--line);
   margin: 0 auto;
   max-width: 1120px;
-  padding: 154px 40px 82px;
+  padding: calc(154px + var(--announcement-height)) 40px 82px;
   text-align: center;
 }
 
@@ -62,7 +62,7 @@
   grid-template-columns: auto 1fr;
   min-height: 320px;
   padding: 28px;
-  scroll-margin-top: 104px;
+  scroll-margin-top: calc(104px + var(--announcement-height));
 }
 
 .service-card-icon {

@@ -8,7 +8,7 @@
     linear-gradient(90deg, rgba(20, 99, 255, 0.05), rgba(255, 255, 255, 0) 42%, rgba(20, 99, 255, 0.035));
   border-bottom: 1px solid rgba(233, 237, 244, 0.72);
   min-height: 100vh;
-  padding: 138px 40px 96px;
+  padding: calc(138px + var(--announcement-height)) 40px 96px;
 }
 
 .request-layout {
@@ -22,7 +22,7 @@
 
 .request-intro {
   position: sticky;
-  top: 126px;
+  top: calc(126px + var(--announcement-height));
 }
 
 .request-kicker {

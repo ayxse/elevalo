@@ -1,5 +1,10 @@
 export const translations = {
   es: {
+    announcement: {
+      kicker: "Oferta de lanzamiento",
+      message: "Eleva tu negocio con una página web por $200.",
+      detail: "Disponible para los primeros 10 proyectos."
+    },
     nav: {
       services: "Servicios",
       projects: "Proyectos",
@@ -40,7 +45,7 @@ export const translations = {
       label: "Cómo funciona.",
       title: "Tu página empieza con una muestra real.",
       text:
-        "Nos cuentas qué hace tu negocio y preparamos una primera dirección visual para que puedas evaluar el estilo y la estructura antes de contratar el proyecto completo.",
+        "Nos cuentas qué hace tu negocio y preparamos una primera dirección visual para que puedas evaluar el estilo y la estructura antes de contratar el proyecto completo. La muestra es completamente gratis y no te obliga a continuar.",
       steps: [
         {
           title: "Completas el formulario",
@@ -87,6 +92,7 @@ export const translations = {
       label: "Cómo construimos",
       title: "Diseñada para tu negocio. Desarrollada desde código.",
       text: "No adaptamos tu negocio a una plantilla prediseñada. Cada proyecto se estructura desde cero y se desarrolla con herramientas modernas para que sea rápido, adaptable y fácil de mantener.",
+      professional: "Cada proyecto es manejado directamente por un profesional con experiencia en diseño y desarrollo web.",
       proofs: [
         "Estructura alrededor de tu contenido",
         "Componentes propios, sin diseño genérico",
@@ -116,7 +122,7 @@ export const translations = {
     },
     pricing: {
       title: "Un punto de partida que respeta tu negocio.",
-      text: "Los proyectos web comienzan en $350. Algunas plazas de portafolio pueden recibir una tarifa especial según el alcance.",
+      text: "Durante el lanzamiento, los primeros 10 proyectos de página web comienzan en $200. Confirmamos el alcance y el precio antes de empezar.",
       packages: [
         {
           name: "Vista inicial",
@@ -128,8 +134,8 @@ export const translations = {
         },
         {
           name: "Página web",
-          price: "Desde $350",
-          badge: "Más solicitado",
+          price: "Desde $200",
+          badge: "Primeros 10 proyectos",
           featured: true,
           text: "Una página profesional diseñada alrededor de la información y los objetivos de tu negocio.",
           bullets: ["Diseño para celular y computadora", "Contenido principal organizado", "Contacto y publicación"],
@@ -198,7 +204,7 @@ export const translations = {
         projectTierHint: "El precio final se confirma después de revisar el alcance.",
         projectTierOptions: [
           { name: "Vista inicial", price: "$0", text: "Una primera dirección visual para evaluar." },
-          { name: "Página web", price: "Desde $350", text: "Contenido principal, contacto y publicación." },
+          { name: "Página web", price: "Desde $200", text: "Oferta de lanzamiento para los primeros 10 proyectos." },
           { name: "Página web avanzada", price: "Desde $650", text: "Más secciones o una integración personalizada." },
           { name: "Necesito recomendación", price: "Por definir", text: "Revisen mis detalles y recomiéndenme la mejor opción." }
         ],
@@ -377,7 +383,7 @@ export const translations = {
       },
       faqs: [
         { question: "¿La muestra es gratis?", answer: "Sí. Preparamos una primera dirección visual con la información que compartas para que puedas evaluar el estilo antes de contratar el proyecto completo." },
-        { question: "¿Tienen tarifa de portafolio?", answer: "Durante el lanzamiento aceptaremos hasta tres proyectos seleccionados desde $250. La tarifa depende de que el alcance sea sencillo y de que podamos mostrar el resultado en nuestro portafolio." },
+        { question: "¿Cómo funciona la oferta de lanzamiento?", answer: "Los primeros 10 proyectos de página web comienzan en $200. Revisamos la solicitud y confirmamos por escrito el alcance y el precio final antes de comenzar." },
         { question: "¿Cuánto material necesito tener?", answer: "Puedes empezar aunque todavía no tengas logo o fotos profesionales. Usaremos lo disponible y te indicaremos qué ayudaría a mejorar el resultado." },
         { question: "¿La página se verá bien en celular?", answer: "Sí. El diseño se prepara para funcionar correctamente en celular, tableta y computadora." },
         { question: "¿Qué pueden conectar a mi página?", answer: "Podemos integrar formularios, mapas, WhatsApp, reservas y otros servicios web según las necesidades del proyecto." }
@@ -402,11 +408,16 @@ export const translations = {
       previewTitle: "Una página web lista para revisar",
       approvalLabel: "3. Aprobación",
       approvalTitle: "Eliges cómo continuar",
-      approvalPrice: "Desde $350",
+      approvalPrice: "Desde $200",
       approvalText: "Página web, secciones e integraciones según lo que necesite el negocio."
     }
   },
   en: {
+    announcement: {
+      kicker: "Launch offer",
+      message: "Elevate your business with a website from $200.",
+      detail: "Available for the first 10 projects."
+    },
     nav: {
       services: "Services",
       projects: "Projects",
@@ -447,7 +458,7 @@ export const translations = {
       label: "How it works.",
       title: "Your website starts with a real preview.",
       text:
-        "Tell us what your business does and we will prepare an initial visual direction so you can evaluate the style and structure before hiring the complete project.",
+        "Tell us what your business does and we will prepare an initial visual direction so you can evaluate the style and structure before hiring the complete project. The preview is completely free, and you are under no obligation to continue.",
       steps: [
         {
           title: "You complete the form",
@@ -493,6 +504,7 @@ export const translations = {
       label: "How we build",
       title: "Designed for your business. Developed from code.",
       text: "We do not force your business into a prebuilt template. Every project is structured from scratch and developed with modern tools so it stays fast, responsive, and easy to maintain.",
+      professional: "Every project is handled directly by a professional with experience in web design and development.",
       proofs: [
         "Structure designed around your content",
         "Custom components without a generic layout",
@@ -522,7 +534,7 @@ export const translations = {
     },
     pricing: {
       title: "A starting point that respects your business.",
-      text: "Website projects start at $350. A limited number of portfolio projects may receive a special rate depending on scope.",
+      text: "During our launch, the first 10 website projects start at $200. We confirm the scope and price before work begins.",
       packages: [
         {
           name: "Initial preview",
@@ -534,8 +546,8 @@ export const translations = {
         },
         {
           name: "Website",
-          price: "From $350",
-          badge: "Most requested",
+          price: "From $200",
+          badge: "First 10 projects",
           featured: true,
           text: "A professional website designed around your business information and goals.",
           bullets: ["Phone and desktop design", "Organized core content", "Contact and publishing"],
@@ -604,7 +616,7 @@ export const translations = {
         projectTierHint: "The final price is confirmed after we review the scope.",
         projectTierOptions: [
           { name: "Initial preview", price: "$0", text: "An initial visual direction to evaluate." },
-          { name: "Website", price: "From $350", text: "Core content, contact, and publishing." },
+          { name: "Website", price: "From $200", text: "Launch offer for the first 10 projects." },
           { name: "Advanced website", price: "From $650", text: "More sections or a custom integration." },
           { name: "I need a recommendation", price: "To be defined", text: "Review my details and recommend the best option." }
         ],
@@ -783,7 +795,7 @@ export const translations = {
       },
       faqs: [
         { question: "Is the preview free?", answer: "Yes. We prepare an initial visual direction using the information you share so you can evaluate the style before hiring the complete project." },
-        { question: "Do you offer a portfolio rate?", answer: "During launch, we will accept up to three selected projects starting at $250. The scope must be simple and we must be able to feature the finished work in our portfolio." },
+        { question: "How does the launch offer work?", answer: "The first 10 website projects start at $200. We review the request and confirm the final scope and price in writing before work begins." },
         { question: "How much material do I need?", answer: "You can begin even if you do not have a logo or professional photos yet. We will use what is available and explain what would improve the result." },
         { question: "Will the page work on mobile?", answer: "Yes. The design is prepared to work properly on phones, tablets, and computers." },
         { question: "What can you connect to my website?", answer: "We can integrate forms, maps, WhatsApp, bookings, and other web services according to the needs of the project." }
@@ -808,7 +820,7 @@ export const translations = {
       previewTitle: "A landing page ready to review",
       approvalLabel: "3. Approval",
       approvalTitle: "Choose how to continue",
-      approvalPrice: "From $350",
+      approvalPrice: "From $200",
       approvalText: "Website, sections, and integrations based on what the business needs."
     }
   }
