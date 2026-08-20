@@ -54,6 +54,7 @@ export default function SiteHeader({ language, menuOpen, onLanguageSelect, page,
           <span className="announcement-kicker">{t.announcement.kicker}</span>
           <strong>{t.announcement.message}</strong>
           <span className="announcement-detail">{t.announcement.detail}</span>
+          <span className="announcement-mobile-message">{t.announcement.mobile}</span>
           <ArrowRight aria-hidden="true" />
         </a>
       </div>

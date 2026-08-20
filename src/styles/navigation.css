@@ -61,6 +61,10 @@
   opacity: 0.76;
 }
 
+.announcement-mobile-message {
+  display: none;
+}
+
 .announcement-bar svg {
   flex: 0 0 auto;
   height: 14px;

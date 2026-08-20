@@ -3,7 +3,8 @@ export const translations = {
     announcement: {
       kicker: "Oferta de lanzamiento",
       message: "Eleva tu negocio con una página web por $200.",
-      detail: "Disponible para los primeros 10 proyectos."
+      detail: "Disponible para los primeros 10 proyectos.",
+      mobile: "Oferta de lanzamiento · Página web por $200"
     },
     nav: {
       services: "Servicios",
@@ -416,7 +417,8 @@ export const translations = {
     announcement: {
       kicker: "Launch offer",
       message: "Elevate your business with a website from $200.",
-      detail: "Available for the first 10 projects."
+      detail: "Available for the first 10 projects.",
+      mobile: "Launch offer · Website from $200"
     },
     nav: {
       services: "Services",
